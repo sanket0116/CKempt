@@ -212,8 +212,8 @@ export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [activeServiceTab, setActiveServiceTab] = useState('cloud');
-  const [uploadCloudAnimation, setUploadCloudAnimation] = useState<any>(null);
-  const [serverAnimation, setServerAnimation] = useState<any>(null);
+  const [uploadCloudAnimation, setUploadCloudAnimation] = useState<object | null>(null);
+  const [serverAnimation, setServerAnimation] = useState<object | null>(null);
   const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {

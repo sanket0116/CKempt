@@ -13,14 +13,12 @@ interface ServicesGridProps {
   title?: string;
   subtitle?: string;
   services: Service[];
-  onViewAllClick?: () => void;
 }
 
 export default function ServicesGrid({ 
   title = "Our Services", 
   subtitle = "Comprehensive cloud solutions tailored to your business needs",
-  services,
-  onViewAllClick
+  services
 }: ServicesGridProps) {
   return (
     <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-white reveal">
@@ -37,7 +35,7 @@ export default function ServicesGrid({
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}

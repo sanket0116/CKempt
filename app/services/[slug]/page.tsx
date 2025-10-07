@@ -234,7 +234,7 @@ export default function ServicePage() {
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Service Not Found</h1>
-          <p className="text-gray-600 mb-8">The service you're looking for doesn't exist.</p>
+          <p className="text-gray-600 mb-8">The service you&apos;re looking for doesn&apos;t exist.</p>
           <Link href="/" className="bg-[#FBB900] text-black px-6 py-2 rounded-full font-semibold hover:bg-[#FBB900]/90 transition">
             Back to Home
           </Link>
@@ -287,7 +287,7 @@ export default function ServicePage() {
     }
   ];
 
-  const keyFeatures = service.features.map((feature, index) => {
+  const keyFeatures = service.features.map((feature) => {
     // Create appropriate icons for different features
     const getFeatureIcon = (featureName: string) => {
       const name = featureName.toLowerCase();

@@ -211,13 +211,13 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
                             <p className="text-[10px] text-gray-600 leading-tight mb-1.5">
                               Client success stories.
                             </p>
-                            <a
+                            <Link
                               href="/#testimonials"
                               onClick={() => setIsServicesDropdownOpen(false)}
                               className="text-[10px] text-[#FBB900] font-semibold hover:text-[#e5a800] transition-colors"
                             >
                               Read More
-                            </a>
+                            </Link>
                           </div>
                         </div>
 

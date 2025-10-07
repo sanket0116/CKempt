@@ -20,7 +20,7 @@ export default function Hero({
   onPrimaryClick,
   animationPath = '/cloud-animation.json'
 }: HeroProps) {
-  const [uploadCloudAnimation, setUploadCloudAnimation] = useState<any>(null);
+  const [uploadCloudAnimation, setUploadCloudAnimation] = useState<object | null>(null);
 
   useEffect(() => {
     fetch(animationPath)

@@ -76,7 +76,7 @@ export default function ServiceContent({
   caseStudies,
   faqs
 }: ServiceContentProps) {
-  const [animationData, setAnimationData] = useState<any>(null);
+  const [animationData, setAnimationData] = useState<object | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   useEffect(() => {
