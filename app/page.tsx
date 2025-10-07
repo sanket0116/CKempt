@@ -227,7 +227,6 @@ export default function Home() {
         title="Our Services"
         subtitle="Comprehensive cloud solutions tailored to your business needs"
         services={mainServices}
-        onViewAllClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
       />
 
       {/* Why Partner Section */}
