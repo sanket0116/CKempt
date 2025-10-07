@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import ChatBot from "./components/ChatBot";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,6 +35,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         {children}
+        <ChatBot />
       </body>
     </html>
   );
