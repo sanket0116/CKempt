@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cloud Kickers - Cloud Computing Solutions
+
+A modern, professional website for Cloud Kickers, a cloud computing company providing innovative solutions for digital transformation.
+
+## Features
+
+- **Modern Design**: Beautiful gradient-based UI with smooth animations and transitions
+- **Fully Responsive**: Optimized for all devices from mobile to desktop
+- **Dark Mode Support**: Automatic dark mode based on system preferences
+- **Multiple Sections**:
+  - Hero section with compelling call-to-action
+  - Why Choose Us section highlighting key benefits
+  - Services showcase
+  - Statistics and achievements
+  - Client testimonials
+  - Contact section
+  - Comprehensive footer
+
+## Tech Stack
+
+- **Next.js 15.5.4** - React framework for production
+- **React 19.1.0** - UI library
+- **TypeScript** - Type-safe code
+- **Tailwind CSS 4** - Utility-first CSS framework
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+my-cloud-site/
+├── app/
+│   ├── page.tsx          # Main landing page
+│   ├── layout.tsx        # Root layout with metadata
+│   ├── globals.css       # Global styles
+│   └── favicon.ico       # Site icon
+├── public/               # Static assets
+└── package.json          # Dependencies
+```
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+You can customize the website by editing:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/page.tsx` - Main content and sections
+- `app/layout.tsx` - Site metadata and SEO
+- `app/globals.css` - Global styles and theme colors
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Build for Production
 
-## Deploy on Vercel
+```bash
+npm run build
+npm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
+
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
