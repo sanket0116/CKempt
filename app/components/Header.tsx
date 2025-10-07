@@ -68,7 +68,6 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
         </Link>
       );
     }
-    // On homepage, use anchor links
     return (
       <a href={href} className={`px-4 py-2 text-sm font-medium text-gray-300 hover:text-[#FBB900] hover:bg-gray-800 rounded-lg transition-all ${mobile ? 'block' : ''}`}>
         {children}
