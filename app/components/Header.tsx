@@ -83,31 +83,9 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="w-9 h-9 bg-gradient-to-br from-[#FBB900] to-[#e5a800] rounded-lg flex items-center justify-center shadow-md">
-            <svg
-  className="w-12 h-12"
-  viewBox="0 0 64 64"
-  xmlns="http://www.w3.org/2000/svg"
-  fill="none"
->
-  {/* Subtle yellow background circle (optional) */}
-  <circle cx="32" cy="32" r="30" fill="#FFD93D" opacity="0.25" />
-
-  {/* Cloud outline with soft gray */}
-  <path
-    d="M48 36c0-5.5-4.5-10-10-10-1.9 0-3.7.5-5.2 1.5C31.4 23.5 27.9 22 24 22c-5.5 0-10 4.5-10 10 0 .5 0 1 .1 1.4C13 40 18 44 24 44h16c4.4 0 8-3.6 8-8z"
-    fill="white"
-    stroke="#BDBDBD"
-    strokeWidth="2"
-  />
-
-  {/* Small highlight accent */}
-  <path
-    d="M22 30c1-2 3.5-3 5.5-2"
-    stroke="rgba(255,255,255,0.9)"
-    strokeWidth="2"
-    strokeLinecap="round"
-  />
-</svg>
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
 
             </div>
             <span className="text-xl font-bold text-[#FBB900]">
