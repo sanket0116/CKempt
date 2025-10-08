@@ -55,6 +55,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           >
             {/* Hidden inputs for FormSubmit */}
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="Thank You for Contacting CKempt" />
+            <input type="hidden" name="_autoresponse" value="Dear Customer,&#10;&#10;Thank you for reaching out to CKempt - Your Trusted Cloud Solutions Partner.&#10;&#10;We have successfully received your inquiry and our team is currently reviewing your message. You can expect a personalized response from one of our cloud experts within 24 hours.&#10;&#10;What happens next:&#10;• Our team will review your requirements&#10;• A cloud expert will reach out to you within 24 hours&#10;• We'll schedule a consultation to discuss your needs&#10;&#10;In the meantime:&#10;• Explore our services: https://c-kempt.vercel.app&#10;• For urgent matters: yash1234502@gmail.com&#10;&#10;We look forward to helping you transform your cloud infrastructure!&#10;&#10;Best regards,&#10;The CKempt Team&#10;https://c-kempt.vercel.app" />
 
             {/* Full Name */}
             <div>
