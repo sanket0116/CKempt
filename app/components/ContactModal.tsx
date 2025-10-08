@@ -54,7 +54,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             method="POST"
           >
             {/* Hidden inputs for FormSubmit */}
-            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" />
             <input type="hidden" name="_captcha" value="false" />
 
             {/* Full Name */}
