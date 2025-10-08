@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import CallbackForm from './CallbackForm';
 
 interface ChatOption {
   id: string;
@@ -12,6 +13,7 @@ interface ChatOption {
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [showAllServices, setShowAllServices] = useState(false);
+  const [showCallbackForm, setShowCallbackForm] = useState(false);
 
   const messageOptions: ChatOption[] = [
     {
@@ -36,8 +38,8 @@ export default function ChatBot() {
         </svg>
       ),
       action: () => {
-        // Open callback form
-        window.location.href = '/contact?type=callback';
+        setShowCallbackForm(true);
+        setIsOpen(false);
       }
     }
   ];
@@ -236,6 +238,9 @@ export default function ChatBot() {
           </div>
         </div>
       )}
+
+      {/* Callback Form Modal */}
+      <CallbackForm isOpen={showCallbackForm} onClose={() => setShowCallbackForm(false)} />
     </>
   );
 }

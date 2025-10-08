@@ -67,7 +67,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 id="name"
                 name="name"
                 required
-                className="w-full pl-4 pr-4 py-3.5 text-sm border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#FBB900] focus:border-transparent outline-none transition-all duration-200 hover:border-gray-300 bg-gray-50/50"
+                className="w-full pl-4 pr-4 py-3.5 text-sm text-gray-900 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#FBB900] focus:border-transparent outline-none transition-all duration-200 hover:border-gray-300 bg-gray-50/50"
                 placeholder="John Doe"
               />
             </div>
@@ -83,7 +83,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   id="email"
                   name="email"
                   required
-                  className="w-full pl-4 pr-4 py-3.5 text-sm border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#FBB900] focus:border-transparent outline-none transition-all duration-200 hover:border-gray-300 bg-gray-50/50"
+                  className="w-full pl-4 pr-4 py-3.5 text-sm text-gray-900 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#FBB900] focus:border-transparent outline-none transition-all duration-200 hover:border-gray-300 bg-gray-50/50"
                   placeholder="john@company.com"
                 />
               </div>
@@ -95,7 +95,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   type="tel"
                   id="phone"
                   name="phone"
-                  className="w-full pl-4 pr-4 py-3.5 text-sm border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#FBB900] focus:border-transparent outline-none transition-all duration-200 hover:border-gray-300 bg-gray-50/50"
+                  className="w-full pl-4 pr-4 py-3.5 text-sm text-gray-900 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#FBB900] focus:border-transparent outline-none transition-all duration-200 hover:border-gray-300 bg-gray-50/50"
                   placeholder="+1 (555) 000-0000"
                 />
               </div>
@@ -110,7 +110,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 type="text"
                 id="company"
                 name="company"
-                className="w-full pl-4 pr-4 py-3.5 text-sm border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#FBB900] focus:border-transparent outline-none transition-all duration-200 hover:border-gray-300 bg-gray-50/50"
+                className="w-full pl-4 pr-4 py-3.5 text-sm text-gray-900 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#FBB900] focus:border-transparent outline-none transition-all duration-200 hover:border-gray-300 bg-gray-50/50"
                 placeholder="Your Company"
               />
             </div>

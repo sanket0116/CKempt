@@ -59,17 +59,23 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
 
   // Navigation link component that handles service page navigation
   const NavLink = ({ href, children, mobile = false }: { href: string; children: React.ReactNode; mobile?: boolean }) => {
+    const handleClick = () => {
+      if (mobile) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
     if (isServicePage) {
       // On service pages, navigate back to homepage with anchor
       const homeHref = href.startsWith('#') ? `/${href}` : href;
       return (
-        <Link href={homeHref} className={`px-4 py-2 text-sm font-medium text-gray-300 hover:text-[#FBB900] hover:bg-gray-800 rounded-lg transition-all ${mobile ? 'block' : ''}`}>
+        <Link href={homeHref} onClick={handleClick} className={`px-4 py-2 text-sm font-medium text-gray-300 hover:text-[#FBB900] hover:bg-gray-800 rounded-lg transition-all ${mobile ? 'block' : ''}`}>
           {children}
         </Link>
       );
     }
     return (
-      <a href={href} className={`px-4 py-2 text-sm font-medium text-gray-300 hover:text-[#FBB900] hover:bg-gray-800 rounded-lg transition-all ${mobile ? 'block' : ''}`}>
+      <a href={href} onClick={handleClick} className={`px-4 py-2 text-sm font-medium text-gray-300 hover:text-[#FBB900] hover:bg-gray-800 rounded-lg transition-all ${mobile ? 'block' : ''}`}>
         {children}
       </a>
     );
@@ -281,7 +287,11 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
             <div className="flex flex-col space-y-2">
               <NavLink href="#home" mobile>Home</NavLink>
               <NavLink href="#about" mobile>About Us</NavLink>
-              <a href="#services" className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-[#FBB900] hover:bg-gray-800 rounded-lg transition">
+              <a 
+                href="#services" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-[#FBB900] hover:bg-gray-800 rounded-lg transition"
+              >
                 Services
               </a>
               <NavLink href="#testimonials" mobile>Testimonials</NavLink>
