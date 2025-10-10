@@ -7,6 +7,7 @@ import AboutUs from './components/AboutUs';
 import ServicesGrid from './components/ServicesGrid';
 import WhyPartner from './components/WhyPartner';
 import Stats from './components/Stats';
+import Team from './components/Team';
 import Testimonials from './components/Testimonials';
 import ContactModal from './components/ContactModal';
 import Footer from './components/Footer';
@@ -47,66 +48,126 @@ const categorizedServices = {
   ],
   devops: [
     {
-      slug: 'devops-automation',
-      title: 'DevOps & Automation',
+      slug: 'cicd-pipeline',
+      title: 'CI/CD Pipeline Setup',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      excerpt: 'Streamline development and operations'
+      excerpt: 'Automate your build, test, and deployment workflows with industry-standard CI/CD tools'
     },
     {
-      slug: 'cloud-consulting',
-      title: 'Cloud Consulting',
+      slug: 'infrastructure-as-code',
+      title: 'Infrastructure as Code (IaC)',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       ),
-      excerpt: 'Strategic DevOps guidance'
+      excerpt: 'Provision and manage cloud resources efficiently using Terraform and Ansible'
     },
     {
-      slug: 'data-analytics',
-      title: 'Data & Analytics',
+      slug: 'cloud-deployment-automation',
+      title: 'Cloud Deployment Automation',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
         </svg>
       ),
-      excerpt: 'Build powerful data platforms'
-    }
-  ],
-  'automation-kubernetes': [
-    {
-      slug: 'devops-automation',
-      title: 'Workflow Automation',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      ),
-      excerpt: 'Streamline repetitive tasks'
+      excerpt: 'Deploy and scale applications seamlessly across AWS, Azure, and GCP'
     },
     {
-      slug: 'cloud-management',
-      title: 'Kubernetes Orchestration',
+      slug: 'containerization-orchestration',
+      title: 'Containerization & Orchestration',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
         </svg>
       ),
-      excerpt: 'Deploy containerized apps'
+      excerpt: 'Dockerize your workloads and orchestrate them with Kubernetes for high availability'
     },
     {
-      slug: 'cloud-security',
-      title: 'Container Management',
+      slug: 'monitoring-observability',
+      title: 'Monitoring & Observability',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       ),
-      excerpt: 'Manage container lifecycle'
+      excerpt: 'Implement end-to-end visibility with Prometheus, Grafana, and ELK stack dashboards'
+    },
+    {
+      slug: 'security-compliance-automation',
+      title: 'Security & Compliance Automation',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      excerpt: 'Integrate security scans, policy enforcement, and compliance checks into your pipelines'
+    }
+  ],
+  ai: [
+    {
+      slug: 'rag-solutions',
+      title: 'RAG Solutions',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      ),
+      excerpt: 'Retrieval-Augmented Generation for intelligent AI'
+    },
+    {
+      slug: 'n8n-automation',
+      title: 'N8N Workflow Automation',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+      excerpt: 'Automate workflows with N8N platform'
+    },
+    {
+      slug: 'ai-ml-models',
+      title: 'AI/ML Model Deployment',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+        </svg>
+      ),
+      excerpt: 'Deploy and scale AI/ML models in production'
+    },
+    {
+      slug: 'llm-integration',
+      title: 'LLM Integration',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+      ),
+      excerpt: 'Integrate large language models into your apps'
+    },
+    {
+      slug: 'ai-chatbots',
+      title: 'AI Chatbots & Assistants',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+        </svg>
+      ),
+      excerpt: 'Build intelligent conversational AI solutions'
+    },
+    {
+      slug: 'vector-databases',
+      title: 'Vector Databases',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+        </svg>
+      ),
+      excerpt: 'Semantic search with vector database solutions'
     }
   ]
 };
@@ -226,7 +287,7 @@ export default function Home() {
       <ServicesGrid 
         title="Our Services"
         subtitle="Comprehensive cloud solutions tailored to your business needs"
-        services={mainServices}
+        categorizedServices={categorizedServices}
       />
 
       {/* Why Partner Section */}
@@ -298,6 +359,45 @@ export default function Home() {
           { value: "60+", label: "Countries We Serve" },
           { value: "25K+", label: "Customers Worldwide" },
           { value: "99.99%", label: "Uptime SLA" }
+        ]}
+      />
+
+      {/* Team Section */}
+      <Team 
+        title="Meet Our Team"
+        subtitle="Expert cloud architects and engineers dedicated to your success"
+        members={[
+          {
+            name: "Sarah Johnson",
+            role: "Chief Technology Officer",
+            bio: "15+ years leading cloud transformation initiatives for Fortune 500 companies. AWS & Azure certified architect.",
+            linkedin: "https://linkedin.com",
+            twitter: "https://twitter.com",
+            email: "sarah.johnson@ckempt.com"
+          },
+          {
+            name: "Michael Chen",
+            role: "Head of DevOps",
+            bio: "Kubernetes expert with a passion for automation and infrastructure as code. CNCF ambassador.",
+            linkedin: "https://linkedin.com",
+            twitter: "https://twitter.com",
+            email: "michael.chen@ckempt.com"
+          },
+          {
+            name: "Emily Rodriguez",
+            role: "Cloud Security Lead",
+            bio: "Cybersecurity specialist focused on cloud compliance and zero-trust architectures. CISSP certified.",
+            linkedin: "https://linkedin.com",
+            email: "emily.rodriguez@ckempt.com"
+          },
+          {
+            name: "David Park",
+            role: "Solutions Architect",
+            bio: "Multi-cloud expert helping enterprises optimize their cloud infrastructure and reduce costs.",
+            linkedin: "https://linkedin.com",
+            twitter: "https://twitter.com",
+            email: "david.park@ckempt.com"
+          }
         ]}
       />
 

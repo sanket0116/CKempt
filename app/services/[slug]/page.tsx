@@ -84,40 +84,219 @@ const services = [
     ]
   },
   {
-    slug: 'devops-automation',
-    title: 'DevOps & Automation',
+    slug: 'cicd-pipeline',
+    title: 'CI/CD Pipeline Setup',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
       </svg>
     ),
-    excerpt: 'Streamline your development and operations with modern DevOps practices and automation tools.',
-    description: 'Accelerate your software delivery with our DevOps and automation services. We implement CI/CD pipelines, infrastructure as code, and monitoring solutions to improve efficiency and reliability.',
+    excerpt: 'Automate your build, test, and deployment workflows with industry-standard CI/CD tools.',
+    description: 'Streamline your software delivery with automated CI/CD pipelines. We implement Jenkins, GitLab CI, GitHub Actions, and other industry-standard tools to automate your build, test, and deployment processes, reducing manual errors and accelerating time-to-market.',
     features: [
-      'CI/CD pipeline design and implementation',
-      'Infrastructure as Code (IaC) deployment',
-      'Automated testing and quality assurance',
-      'Configuration management and orchestration',
-      'Performance monitoring and alerting'
+      'Automated build and test pipelines',
+      'Multi-environment deployment strategies',
+      'Integration with version control systems',
+      'Automated rollback and recovery',
+      'Pipeline monitoring and notifications'
     ]
   },
   {
-    slug: 'data-analytics',
-    title: 'Data & Analytics Platform',
+    slug: 'infrastructure-as-code',
+    title: 'Infrastructure as Code (IaC)',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
       </svg>
     ),
-    excerpt: 'Build powerful data platforms and analytics solutions to drive data-driven decision making.',
-    description: 'Transform your data into actionable insights with our data and analytics platform services. We design and implement scalable data lakes, warehouses, and analytics solutions.',
+    excerpt: 'Provision and manage cloud resources efficiently using Terraform and Ansible.',
+    description: 'Manage your infrastructure as code with Terraform, Ansible, and CloudFormation. We help you version control your infrastructure, ensure consistency across environments, and enable rapid provisioning and scaling of cloud resources.',
     features: [
-      'Data lake and warehouse architecture design',
-      'ETL/ELT pipeline development',
-      'Real-time analytics and streaming data',
-      'Business intelligence dashboard creation',
-      'Machine learning and AI integration'
+      'Terraform and Ansible implementation',
+      'Infrastructure versioning and change management',
+      'Multi-cloud resource provisioning',
+      'Configuration drift detection',
+      'Automated infrastructure testing'
+    ]
+  },
+  {
+    slug: 'cloud-deployment-automation',
+    title: 'Cloud Deployment Automation',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+      </svg>
+    ),
+    excerpt: 'Deploy and scale applications seamlessly across AWS, Azure, and GCP.',
+    description: 'Automate application deployments across multiple cloud platforms. We implement blue-green deployments, canary releases, and rolling updates to ensure zero-downtime deployments and seamless scaling across AWS, Azure, and Google Cloud Platform.',
+    features: [
+      'Multi-cloud deployment strategies',
+      'Blue-green and canary deployments',
+      'Auto-scaling configuration',
+      'Load balancer integration',
+      'Deployment health monitoring'
+    ]
+  },
+  {
+    slug: 'containerization-orchestration',
+    title: 'Containerization & Orchestration',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+      </svg>
+    ),
+    excerpt: 'Dockerize your workloads and orchestrate them with Kubernetes for high availability.',
+    description: 'Containerize your applications with Docker and orchestrate them using Kubernetes. We help you achieve high availability, automatic scaling, and efficient resource utilization through modern container orchestration practices.',
+    features: [
+      'Docker containerization strategy',
+      'Kubernetes cluster setup and management',
+      'Helm charts for application deployment',
+      'Service mesh implementation',
+      'Container security and scanning'
+    ]
+  },
+  {
+    slug: 'monitoring-observability',
+    title: 'Monitoring & Observability',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>
+    ),
+    excerpt: 'Implement end-to-end visibility with Prometheus, Grafana, and ELK stack dashboards.',
+    description: 'Gain complete visibility into your infrastructure and applications with comprehensive monitoring and observability solutions. We implement Prometheus, Grafana, ELK stack, and distributed tracing to help you identify and resolve issues quickly.',
+    features: [
+      'Prometheus and Grafana setup',
+      'ELK stack for log aggregation',
+      'Distributed tracing implementation',
+      'Custom alerting and notifications',
+      'Performance metrics and SLA tracking'
+    ]
+  },
+  {
+    slug: 'security-compliance-automation',
+    title: 'Security & Compliance Automation',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    ),
+    excerpt: 'Integrate security scans, policy enforcement, and compliance checks into your pipelines.',
+    description: 'Automate security and compliance in your DevOps pipelines. We integrate security scanning, vulnerability assessment, policy enforcement, and compliance checks to ensure your applications meet industry standards and regulatory requirements.',
+    features: [
+      'Automated security scanning in CI/CD',
+      'Container vulnerability assessment',
+      'Policy as code implementation',
+      'Compliance reporting and auditing',
+      'Secret management and rotation'
+    ]
+  },
+  {
+    slug: 'rag-solutions',
+    title: 'RAG Solutions',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      </svg>
+    ),
+    excerpt: 'Retrieval-Augmented Generation for intelligent AI applications.',
+    description: 'Implement cutting-edge RAG (Retrieval-Augmented Generation) systems that combine the power of large language models with your proprietary data. Our RAG solutions enable accurate, context-aware AI responses grounded in your organization\'s knowledge base.',
+    features: [
+      'Custom vector database implementation',
+      'Document ingestion and chunking strategies',
+      'Semantic search and retrieval optimization',
+      'LLM integration and prompt engineering',
+      'Real-time knowledge base updates'
+    ]
+  },
+  {
+    slug: 'n8n-automation',
+    title: 'N8N Workflow Automation',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
+    excerpt: 'Automate complex workflows with the powerful N8N platform.',
+    description: 'Streamline your business operations with N8N, the fair-code workflow automation platform. We design and implement custom automation workflows that connect your apps, databases, and services, eliminating manual tasks and boosting productivity.',
+    features: [
+      'Custom workflow design and implementation',
+      'API integration and data synchronization',
+      'Event-driven automation triggers',
+      'Self-hosted or cloud deployment options',
+      'Workflow monitoring and optimization'
+    ]
+  },
+  {
+    slug: 'ai-ml-models',
+    title: 'AI/ML Model Deployment',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+      </svg>
+    ),
+    excerpt: 'Deploy and scale AI/ML models in production environments.',
+    description: 'Take your machine learning models from development to production with our comprehensive deployment services. We handle infrastructure setup, model serving, monitoring, and scaling to ensure your AI applications perform reliably at scale.',
+    features: [
+      'Model containerization and deployment',
+      'Auto-scaling and load balancing',
+      'A/B testing and model versioning',
+      'Performance monitoring and drift detection',
+      'GPU-optimized infrastructure'
+    ]
+  },
+  {
+    slug: 'llm-integration',
+    title: 'LLM Integration',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+      </svg>
+    ),
+    excerpt: 'Integrate large language models into your applications seamlessly.',
+    description: 'Harness the power of GPT-4, Claude, Llama, and other leading LLMs in your applications. We provide end-to-end integration services including API setup, prompt engineering, fine-tuning, and cost optimization strategies.',
+    features: [
+      'Multi-LLM provider integration',
+      'Prompt engineering and optimization',
+      'Fine-tuning for domain-specific tasks',
+      'Cost management and token optimization',
+      'Safety filters and content moderation'
+    ]
+  },
+  {
+    slug: 'ai-chatbots',
+    title: 'AI Chatbots & Assistants',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+      </svg>
+    ),
+    excerpt: 'Build intelligent conversational AI solutions for customer engagement.',
+    description: 'Create sophisticated AI-powered chatbots and virtual assistants that understand context, handle complex queries, and provide personalized experiences. Our solutions integrate with your existing systems and scale with your business.',
+    features: [
+      'Natural language understanding (NLU)',
+      'Multi-channel deployment (web, mobile, messaging)',
+      'Context-aware conversation management',
+      'CRM and database integration',
+      'Analytics and conversation insights'
+    ]
+  },
+  {
+    slug: 'vector-databases',
+    title: 'Vector Databases',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+      </svg>
+    ),
+    excerpt: 'Implement semantic search with advanced vector database solutions.',
+    description: 'Power your AI applications with high-performance vector databases for semantic search, recommendation systems, and similarity matching. We implement and optimize solutions using Pinecone, Weaviate, Qdrant, and other leading vector databases.',
+    features: [
+      'Vector database selection and setup',
+      'Embedding generation and optimization',
+      'Similarity search implementation',
+      'Hybrid search (vector + keyword)',
+      'Performance tuning and scaling'
     ]
   }
 ];
@@ -158,66 +337,126 @@ const categorizedServices = {
   ],
   devops: [
     {
-      slug: 'devops-automation',
-      title: 'DevOps & Automation',
+      slug: 'cicd-pipeline',
+      title: 'CI/CD Pipeline Setup',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      excerpt: 'Streamline development and operations'
+      excerpt: 'Automate your build, test, and deployment workflows'
     },
     {
-      slug: 'cloud-consulting',
-      title: 'Cloud Consulting',
+      slug: 'infrastructure-as-code',
+      title: 'Infrastructure as Code (IaC)',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       ),
-      excerpt: 'Strategic DevOps guidance'
+      excerpt: 'Provision and manage cloud resources efficiently'
     },
     {
-      slug: 'data-analytics',
-      title: 'Data & Analytics',
+      slug: 'cloud-deployment-automation',
+      title: 'Cloud Deployment Automation',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
         </svg>
       ),
-      excerpt: 'Build powerful data platforms'
-    }
-  ],
-  'automation-kubernetes': [
-    {
-      slug: 'devops-automation',
-      title: 'Workflow Automation',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      ),
-      excerpt: 'Streamline repetitive tasks'
+      excerpt: 'Deploy and scale applications seamlessly'
     },
     {
-      slug: 'cloud-management',
-      title: 'Kubernetes Orchestration',
+      slug: 'containerization-orchestration',
+      title: 'Containerization & Orchestration',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
         </svg>
       ),
-      excerpt: 'Deploy containerized apps'
+      excerpt: 'Dockerize and orchestrate with Kubernetes'
     },
     {
-      slug: 'cloud-security',
-      title: 'Container Management',
+      slug: 'monitoring-observability',
+      title: 'Monitoring & Observability',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       ),
-      excerpt: 'Manage container lifecycle'
+      excerpt: 'End-to-end visibility with monitoring tools'
+    },
+    {
+      slug: 'security-compliance-automation',
+      title: 'Security & Compliance Automation',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      excerpt: 'Integrate security scans and compliance checks'
+    }
+  ],
+  ai: [
+    {
+      slug: 'rag-solutions',
+      title: 'RAG Solutions',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      ),
+      excerpt: 'Retrieval-Augmented Generation for intelligent AI'
+    },
+    {
+      slug: 'n8n-automation',
+      title: 'N8N Workflow Automation',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+      excerpt: 'Automate workflows with N8N platform'
+    },
+    {
+      slug: 'ai-ml-models',
+      title: 'AI/ML Model Deployment',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+        </svg>
+      ),
+      excerpt: 'Deploy and scale AI/ML models in production'
+    },
+    {
+      slug: 'llm-integration',
+      title: 'LLM Integration',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+      ),
+      excerpt: 'Integrate large language models into your apps'
+    },
+    {
+      slug: 'ai-chatbots',
+      title: 'AI Chatbots & Assistants',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+        </svg>
+      ),
+      excerpt: 'Build intelligent conversational AI solutions'
+    },
+    {
+      slug: 'vector-databases',
+      title: 'Vector Databases',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+        </svg>
+      ),
+      excerpt: 'Semantic search with vector database solutions'
     }
   ]
 };

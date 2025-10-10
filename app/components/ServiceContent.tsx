@@ -84,7 +84,13 @@ export default function ServiceContent({
       fetch(hero.animationPath)
         .then((r) => r.json())
         .then((json) => setAnimationData(json))
-        .catch(() => setAnimationData(null));
+        .catch(() => {
+          // Fallback to cloud-animation.json if the primary animation fails
+          fetch('/cloud-animation.json')
+            .then((r) => r.json())
+            .then((json) => setAnimationData(json))
+            .catch(() => setAnimationData(null));
+        });
     }
   }, [hero?.animationPath]);
 

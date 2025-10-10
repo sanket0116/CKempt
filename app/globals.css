@@ -63,6 +63,32 @@ textarea::-ms-input-placeholder { color: #374151; opacity: 1; }
   display: none;
 }
 
+/* Custom styled scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #FBB900 #f3f4f6; /* thumb track */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #FBB900;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+  min-height: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #e5a800;
+}
+
 /* Reveal-on-scroll utilities */
 .reveal {
   opacity: 0;

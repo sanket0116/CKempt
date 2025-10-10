@@ -16,7 +16,7 @@ interface HeaderProps {
   categorizedServices: {
     cloud: Service[];
     devops: Service[];
-    'automation-kubernetes': Service[];
+    ai: Service[];
   };
 }
 
@@ -130,8 +130,8 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
                       <div className="inline-flex bg-white rounded-lg p-1 shadow-sm">
                         {[
                           { key: 'cloud', label: 'Cloud Services' },
-                          { key: 'devops', label: 'DevOps and Automation' },
-                          { key: 'automation-kubernetes', label: 'Kubernetes' }
+                          { key: 'devops', label: 'DevOps & Automation' },
+                          { key: 'ai', label: 'AI' }
                         ].map((tab) => (
                           <button
                             key={tab.key}
