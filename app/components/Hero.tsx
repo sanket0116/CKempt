@@ -30,7 +30,7 @@ export default function Hero({
   }, [animationPath]);
 
   return (
-    <section id="home" className="pt-20 pb-4 px-4 sm:px-6 lg:pt-24 lg:pb-8 lg:px-8 min-h-fit flex items-center bg-gradient-to-br from-white via-gray-50 to-white reveal">
+    <section id="home" className="pt-20 pb-2 px-4 sm:px-6 lg:pt-24 lg:pb-4 lg:px-8 min-h-fit flex items-center bg-gradient-to-br from-white via-gray-50 to-white reveal">
       <div className="max-w-7xl mx-auto w-full">
         <div className={`grid gap-2 lg:gap-12 items-center ${uploadCloudAnimation ? 'lg:grid-cols-2' : 'lg:grid-cols-1'}`}>
           {/* Right Side - Animation (First on mobile, second on desktop) */}

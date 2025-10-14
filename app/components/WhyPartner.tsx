@@ -23,7 +23,7 @@ export default function WhyPartner({
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-gray-50 to-white">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-gray-50 to-white reveal">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
