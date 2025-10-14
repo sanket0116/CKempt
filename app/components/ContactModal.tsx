@@ -1,11 +1,55 @@
 'use client';
 
+import { useState } from 'react';
+
 interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const formData = new FormData(e.currentTarget);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitStatus('success');
+        (e.target as HTMLFormElement).reset();
+        setTimeout(() => {
+          onClose();
+          setSubmitStatus('idle');
+        }, 2000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -50,13 +94,15 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         <div className="max-h-[calc(90vh-140px)] overflow-y-auto px-8 pb-8">
           <form
             className="space-y-6"
-            action="https://formsubmit.co/yash1234502@gmail.com"
-            method="POST"
+            onSubmit={handleSubmit}
           >
-            {/* Hidden inputs for FormSubmit */}
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_subject" value="Thank You for Contacting CKempt" />
-            <input type="hidden" name="_autoresponse" value="Dear Customer,&#10;&#10;Thank you for reaching out to CKempt - Your Trusted Cloud Solutions Partner.&#10;&#10;We have successfully received your inquiry and our team is currently reviewing your message. You can expect a personalized response from one of our cloud experts within 24 hours.&#10;&#10;What happens next:&#10;• Our team will review your requirements&#10;• A cloud expert will reach out to you within 24 hours&#10;• We'll schedule a consultation to discuss your needs&#10;&#10;In the meantime:&#10;• Explore our services: https://c-kempt.vercel.app&#10;• For urgent matters: yash1234502@gmail.com&#10;&#10;We look forward to helping you transform your cloud infrastructure!&#10;&#10;Best regards,&#10;The CKempt Team&#10;https://c-kempt.vercel.app" />
+            {/* Web3Forms Access Key */}
+            <input type="hidden" name="access_key" value="86603918-025c-46fe-be57-b66a2d190e45" />
+            
+            {/* Web3Forms Configuration */}
+            <input type="hidden" name="subject" value="New Contact Form Submission from CKempt" />
+            <input type="hidden" name="from_name" value="CKempt Contact Form" />
+            <input type="hidden" name="redirect" value="false" />
 
             {/* Full Name */}
             <div>
@@ -154,13 +200,42 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             </div>
 
             {/* Submit Button */}
-            <div className="flex justify-end">
-              <button
-                type="submit"
-                className="bg-gradient-to-r from-[#FBB900] to-[#e5a800] text-black py-3.5 px-6 rounded-xl font-semibold hover:shadow-xl hover:scale-[1.02] transition-all duration-200 shadow-lg"
-              >
-                Send Message
-              </button>
+            <div className="flex flex-col gap-3">
+              {submitStatus === 'success' && (
+                <div className="flex items-center gap-2 text-green-600 text-sm font-medium bg-green-50 px-4 py-3 rounded-xl">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Message sent successfully! We'll get back to you soon.
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="flex items-center gap-2 text-red-600 text-sm font-medium bg-red-50 px-4 py-3 rounded-xl">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Failed to send message. Please try again.
+                </div>
+              )}
+              <div className="flex justify-end">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-gradient-to-r from-[#FBB900] to-[#e5a800] text-black py-3.5 px-6 rounded-xl font-semibold hover:shadow-xl hover:scale-[1.02] transition-all duration-200 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center gap-2"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Message'
+                  )}
+                </button>
+              </div>
             </div>
           </form>
         </div>

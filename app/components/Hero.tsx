@@ -30,22 +30,22 @@ export default function Hero({
   }, [animationPath]);
 
   return (
-    <section id="home" className="pt-20 pb-4 px-4 sm:px-6 lg:pt-24 lg:pb-12 lg:px-8 min-h-fit lg:min-h-screen flex items-center bg-gradient-to-br from-white via-gray-50 to-white reveal">
+    <section id="home" className="pt-20 pb-4 px-4 sm:px-6 lg:pt-24 lg:pb-8 lg:px-8 min-h-fit flex items-center bg-gradient-to-br from-white via-gray-50 to-white reveal">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-2 lg:gap-12 items-center">
+        <div className={`grid gap-2 lg:gap-12 items-center ${uploadCloudAnimation ? 'lg:grid-cols-2' : 'lg:grid-cols-1'}`}>
           {/* Right Side - Animation (First on mobile, second on desktop) */}
-          <div className="flex justify-center lg:justify-end lg:order-2 -my-4 lg:my-0">
-            {uploadCloudAnimation && (
+          {uploadCloudAnimation && (
+            <div className="flex justify-center lg:justify-end lg:order-2 -my-4 lg:my-0">
               <Lottie 
                 animationData={uploadCloudAnimation} 
                 loop={true} 
                 className="w-full max-w-xs sm:max-w-sm lg:max-w-lg h-auto"
               />
-            )}
-          </div>
+            </div>
+          )}
 
           {/* Left Side - Content (Second on mobile, first on desktop) */}
-          <div className="lg:order-1 text-center lg:text-left">
+          <div className={`lg:order-1 ${uploadCloudAnimation ? 'text-center lg:text-left' : 'text-center'}`}>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-2 lg:mb-6 leading-tight">
               <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                 {title}

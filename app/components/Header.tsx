@@ -132,20 +132,22 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
                           { key: 'cloud', label: 'Cloud Services' },
                           { key: 'devops', label: 'DevOps & Automation' },
                           { key: 'ai', label: 'AI' }
-                        ].map((tab) => (
-                          <button
-                            key={tab.key}
-                            onClick={() => setActiveServiceTab(tab.key)}
-                            onMouseEnter={() => setActiveServiceTab(tab.key)}
-                            className={`px-4 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
-                              activeServiceTab === tab.key
-                                ? 'bg-[#FBB900] text-black'
-                                : 'bg-white text-gray-600 hover:text-gray-900'
-                            }`}
-                          >
-                            {tab.label}
-                          </button>
-                        ))}
+                        ]
+                          .filter((tab) => categorizedServices[tab.key as keyof typeof categorizedServices]?.length > 0)
+                          .map((tab) => (
+                            <button
+                              key={tab.key}
+                              onClick={() => setActiveServiceTab(tab.key)}
+                              onMouseEnter={() => setActiveServiceTab(tab.key)}
+                              className={`px-4 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
+                                activeServiceTab === tab.key
+                                  ? 'bg-[#FBB900] text-black'
+                                  : 'bg-white text-gray-600 hover:text-gray-900'
+                              }`}
+                            >
+                              {tab.label}
+                            </button>
+                          ))}
                       </div>
                     </div>
 

@@ -45,19 +45,23 @@ export default function ServicesGrid({
 
         {/* Services by Category */}
         <div className="space-y-12">
-          {categories.map((category) => (
-            <div key={category.key}>
-              {/* Category Title */}
-              <div className="mb-6">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-                  {category.label}
-                </h3>
-                <div className="w-16 h-1 bg-[#FBB900] rounded-full"></div>
-              </div>
+          {categories.map((category) => {
+            // Hide category if it has no services
+            if (category.services.length === 0) return null;
+            
+            return (
+              <div key={category.key}>
+                {/* Category Title */}
+                <div className="mb-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                    {category.label}
+                  </h3>
+                  <div className="w-16 h-1 bg-[#FBB900] rounded-full"></div>
+                </div>
 
-              {/* Services Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {category.services.map((service) => (
+                {/* Services Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {category.services.map((service) => (
                   <Link
                     key={service.slug}
                     href={`/services/${service.slug}`}
@@ -88,10 +92,11 @@ export default function ServicesGrid({
                       </svg>
                     </div>
                   </Link>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

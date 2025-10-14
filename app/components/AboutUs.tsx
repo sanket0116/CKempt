@@ -57,7 +57,7 @@ export default function AboutUs({
   ];
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-gray-50 to-white reveal">
+    <section id="about" className="py-8 md:py-10 lg:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-gray-50 to-white reveal">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
