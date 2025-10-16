@@ -32,7 +32,17 @@ interface FAQItem {
   answer: string;
 }
 
-interface ServiceContentProps {
+interface ServiceDetailProps {
+  // Service Info
+  service?: {
+    title: string;
+    description: string;
+    features: string[];
+    icon?: React.ReactNode;
+    excerpt?: string;
+    slug?: string;
+  };
+
   // Hero Section
   hero?: {
     title: string;
@@ -42,6 +52,13 @@ interface ServiceContentProps {
 
   // Key Features
   features?: {
+    title?: string;
+    subtitle?: string;
+    items: Feature[];
+  };
+
+  // Benefits
+  benefits?: {
     title?: string;
     subtitle?: string;
     items: Feature[];
@@ -69,13 +86,15 @@ interface ServiceContentProps {
   };
 }
 
-export default function ServiceContent({
+export default function ServiceDetail({
+  service,
   hero,
   features,
+  benefits,
   process,
   caseStudies,
   faqs
-}: ServiceContentProps) {
+}: ServiceDetailProps) {
   const [animationData, setAnimationData] = useState<object | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
@@ -176,6 +195,56 @@ export default function ServiceContent({
                     </h3>
                     <p className="text-xs text-gray-600 leading-relaxed">
                       {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Benefits Section */}
+      {benefits && benefits.items.length > 0 && (
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#FBB900] to-[#e5a800] rounded-full mb-4 shadow-lg">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                {benefits.title || "Key Benefits"}
+              </h2>
+              <p className="text-sm text-gray-600">
+                {benefits.subtitle || "Why choose our services"}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {benefits.items.map((benefit, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-white p-4 rounded-lg border border-gray-100 hover:border-[#FBB900] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                >
+                  {/* Background Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#FBB900]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  {/* Icon */}
+                  <div className="relative w-10 h-10 bg-gradient-to-br from-[#FBB900] to-[#e5a800] rounded-md flex items-center justify-center mb-3 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm">
+                    <div className="text-white scale-75">
+                      {benefit.icon}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative">
+                    <h3 className="text-sm font-bold text-gray-900 mb-1.5 group-hover:text-[#FBB900] transition-colors">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      {benefit.description}
                     </p>
                   </div>
                 </div>

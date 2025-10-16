@@ -11,8 +11,10 @@ import Team from './components/Team';
 import Testimonials from './components/Testimonials';
 import ContactModal from './components/ContactModal';
 import Footer from './components/Footer';
+import { categorizedServices } from './data/allServices';
 
-// Services data with categorized services for header tabs
+/*
+// OLD CODE REMOVED - Services data now imported from './data/allServices'
 const categorizedServices = {
   cloud: [
     {
@@ -221,8 +223,9 @@ const categorizedServices = {
   //     ),
   //     excerpt: 'Semantic search with vector database solutions'
   //   }
-  // ] */
+  // ] 
 };
+*/
 
 // Main services for homepage grid
 const mainServices = [

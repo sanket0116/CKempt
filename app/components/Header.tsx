@@ -27,8 +27,8 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
   const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
 
-  // Check if we're on a service page
-  const isServicePage = pathname.startsWith('/services/');
+  // Check if we're on a service page or all-services page
+  const isServicePage = pathname.startsWith('/services/') || pathname === '/all-services';
 
   // Handle dropdown opening
   const handleDropdownOpen = () => {
