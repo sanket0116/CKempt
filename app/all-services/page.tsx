@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
@@ -11,7 +11,7 @@ import { categorizedServices, allServices } from '../data/allServices';
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
-export default function AllServicesPage() {
+function AllServicesContent() {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get('category') as 'cloud' | 'devops' | 'ai' | null;
   
@@ -272,5 +272,13 @@ export default function AllServicesPage() {
         onClose={() => setIsContactModalOpen(false)}
       />
     </>
+  );
+}
+
+export default function AllServicesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <AllServicesContent />
+    </Suspense>
   );
 }
