@@ -18,13 +18,21 @@ function AllServicesContent() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<'cloud' | 'devops' | 'ai'>(categoryParam || 'cloud');
   const [cloudAnimation, setCloudAnimation] = useState<object | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Load cloud animation
   useEffect(() => {
+    setIsLoading(true);
     fetch('/cloud-animation.json')
       .then(res => res.json())
-      .then(data => setCloudAnimation(data))
-      .catch(err => console.error('Failed to load animation:', err));
+      .then(data => {
+        setCloudAnimation(data);
+        setTimeout(() => setIsLoading(false), 500);
+      })
+      .catch(err => {
+        console.error('Failed to load animation:', err);
+        setIsLoading(false);
+      });
   }, []);
 
   // Update selected category when URL parameter changes
@@ -143,7 +151,7 @@ function AllServicesContent() {
           return (
             <div
               key={service.slug}
-              className="w-full px-4 sm:px-6 lg:px-16 py-6"
+              className="w-full px-4 sm:px-6 lg:px-16 py-3"
               style={{
                 animation: 'fadeInUp 0.8s ease-out forwards',
                 animationDelay: `${idx * 0.1}s`,
@@ -153,59 +161,46 @@ function AllServicesContent() {
               {/* Service Card - Reference Image Style */}
               <div className="max-w-7xl w-full mx-auto">
                 <div 
-                  className={`relative ${isEven ? 'bg-gradient-to-br from-[#FDD870] via-[#FBB900] to-[#F9A825]' : 'bg-gradient-to-br from-[#4A5568] via-[#2D3748] to-[#1A202C]'} rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500`}
+                  className="relative bg-gray-100 border border-gray-300 hover:border-[#FBB900] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
                   style={{
                     animation: 'slideInLeft 0.8s ease-out forwards',
                     animationDelay: `${idx * 0.1 + 0.2}s`,
                     opacity: 0
                   }}
                 >
-                  {/* Background Pattern - Tech Grid */}
-                  <div className="absolute inset-0 opacity-5">
-                    <div className="absolute inset-0" style={{
-                      backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-                      backgroundSize: '50px 50px'
-                    }}></div>
-                  </div>
-
-                  {/* Decorative Glow */}
-                  <div className="absolute top-0 right-0 w-96 h-96 bg-[#FBB900]/10 rounded-full blur-[120px]"></div>
-                  <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FBB900]/15 rounded-full blur-[120px]"></div>
-
-                  <div className={`relative z-10 flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-4 lg:gap-8 p-5 lg:p-8`}>
+                  <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-4 lg:gap-6 p-4 lg:p-6`}>
                     {/* Left Side - 3D Illustration Area */}
                     <div className="w-full lg:w-1/3 flex items-center justify-center">
-                      <div className="relative w-full max-w-[200px] lg:max-w-[280px]">
-                        {/* Isometric 3D Animation Container */}
-                        <div className="relative">
-                          {/* Glow effect behind animation */}
-                          <div className={`absolute inset-0 ${isEven ? 'bg-white/20' : 'bg-[#FBB900]/20'} rounded-full blur-3xl scale-150 animate-pulse`}></div>
-                          
-                          {/* Lottie Animation */}
-                          <div className="relative flex items-center justify-center">
-                            {cloudAnimation && (
-                              <Lottie 
-                                animationData={cloudAnimation}
-                                loop={true}
-                                className="w-full h-auto drop-shadow-2xl"
-                              />
-                            )}
-                          </div>
+                      <div className="w-full max-w-[180px] lg:max-w-[220px]">
+                        {/* Lottie Animation */}
+                        <div className="flex items-center justify-center relative">
+                          {isLoading ? (
+                            <div className="w-full aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl animate-pulse"></div>
+                          ) : cloudAnimation ? (
+                            <Lottie 
+                              animationData={cloudAnimation}
+                              loop={true}
+                              className="w-full h-auto"
+                            />
+                          ) : null}
                         </div>
                       </div>
                     </div>
 
                     {/* Right Side - Text Content */}
-                    <div className="w-full lg:w-2/3 space-y-4">
+                    <div className="w-full lg:w-2/3 space-y-3">
                       {/* Title Section */}
-                      <div>
-                        <h2 className={`text-xl lg:text-3xl font-bold ${isEven ? 'text-gray-900' : 'text-white'} leading-tight`}>
+                      <div className="space-y-1.5">
+                        <div className="inline-block px-2.5 py-0.5 bg-[#FBB900]/10 text-[#FBB900] text-[10px] font-bold rounded-full uppercase tracking-wider">
+                          {selectedCategory}
+                        </div>
+                        <h2 className="text-xl lg:text-2xl font-bold text-gray-900 leading-tight">
                           {service.title}
                         </h2>
                       </div>
 
                       {/* Description */}
-                      <p className={`text-sm lg:text-base leading-relaxed ${isEven ? 'text-gray-700' : 'text-gray-200'}`}>
+                      <p className="text-sm lg:text-base leading-relaxed text-gray-600">
                         {detailedService?.description || service.excerpt}
                       </p>
 
@@ -213,13 +208,13 @@ function AllServicesContent() {
                       {detailedService?.features && (
                         <div className="space-y-2">
                           {detailedService.features.slice(0, 3).map((feature, featureIdx) => (
-                            <div key={featureIdx} className="flex items-start gap-2.5 group">
-                              <div className={`flex-shrink-0 w-4 h-4 rounded flex items-center justify-center mt-0.5 ${isEven ? 'bg-[#D4A017]' : 'bg-[#FBB900]/20'} transition-colors`}>
-                                <svg className={`w-2.5 h-2.5 ${isEven ? 'text-white' : 'text-[#FBB900]'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div key={featureIdx} className="flex items-start gap-2.5 group hover:translate-x-1 transition-transform duration-300">
+                              <div className="flex-shrink-0 w-4 h-4 rounded-md flex items-center justify-center mt-0.5 bg-gradient-to-br from-[#FBB900] to-[#F9A825] shadow-sm">
+                                <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                 </svg>
                               </div>
-                              <p className={`text-xs lg:text-sm leading-relaxed font-medium ${isEven ? 'text-gray-800' : 'text-gray-300'}`}>
+                              <p className="text-xs lg:text-sm leading-relaxed font-medium text-gray-700">
                                 {feature}
                               </p>
                             </div>
@@ -228,13 +223,13 @@ function AllServicesContent() {
                       )}
 
                       {/* CTA Button */}
-                      <div className="pt-3">
+                      <div className="pt-2">
                         <Link
                           href={`/services/${service.slug}`}
-                          className={`group inline-flex items-center gap-2 ${isEven ? 'bg-gray-900 hover:bg-gray-800 text-white' : 'bg-white hover:bg-gray-50 text-gray-900'} font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg text-sm`}
+                          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FBB900] to-[#F9A825] hover:from-[#F9A825] hover:to-[#FBB900] text-white font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-md text-sm group"
                         >
-                          <span>Learn More</span>
-                          <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <span>Explore Service</span>
+                          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                           </svg>
                         </Link>
