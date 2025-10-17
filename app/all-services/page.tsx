@@ -17,7 +17,7 @@ export default function AllServicesPage() {
   
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<'cloud' | 'devops' | 'ai'>(categoryParam || 'cloud');
-  const [cloudAnimation, setCloudAnimation] = useState<any>(null);
+  const [cloudAnimation, setCloudAnimation] = useState<object | null>(null);
 
   // Load cloud animation
   useEffect(() => {
