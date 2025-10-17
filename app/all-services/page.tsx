@@ -8,7 +8,6 @@ import Header from '../components/Header';
 import ContactModal from '../components/ContactModal';
 import Footer from '../components/Footer';
 import { categorizedServices, allServices } from '../data/allServices';
-import cloudAnimation from '../../public/cloud-animation.json';
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
@@ -18,6 +17,15 @@ export default function AllServicesPage() {
   
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<'cloud' | 'devops' | 'ai'>(categoryParam || 'cloud');
+  const [cloudAnimation, setCloudAnimation] = useState<any>(null);
+
+  // Load cloud animation
+  useEffect(() => {
+    fetch('/cloud-animation.json')
+      .then(res => res.json())
+      .then(data => setCloudAnimation(data))
+      .catch(err => console.error('Failed to load animation:', err));
+  }, []);
 
   // Update selected category when URL parameter changes
   useEffect(() => {
