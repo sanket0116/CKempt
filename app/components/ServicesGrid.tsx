@@ -147,7 +147,7 @@ export default function ServicesGrid({
             {/* All Services Link */}
             <div className="mt-10 flex justify-center">
               <Link 
-                href="/all-services"
+                href={`/all-services?category=${validCategories[activeTab]?.key || 'cloud'}`}
                 className="inline-flex items-center gap-2 text-[#FBB900] font-semibold text-base hover:gap-3 transition-all duration-300 group"
               >
                 <span>View All Services</span>
