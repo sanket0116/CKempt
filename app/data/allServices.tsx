@@ -87,52 +87,14 @@ export const allServices: Service[] = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
       </svg>
     ),
-    excerpt: 'Migration plans, processes, and practices',
-    description: 'Seamlessly migrate your applications and data to the cloud with zero downtime and optimized performance. Our cloud modernization and migration services help you transition from legacy systems to modern cloud infrastructure.',
+    excerpt: 'Modernizing business applications have become a necessity for businesses to sustain themselves',
+    description: 'At ckempt, we understand this dire need of new-age businesses to have a strong support for their modernization and cloud migration needs. Our end-to-end cloud support services guide businesses through their migration journey by identifying and selecting the right cloud deployment platforms, along with testing and management, for optimized business outcomes.',
     features: [
-      'Legacy system assessment and migration planning',
-      'Zero-downtime migration strategies',
-      'Application refactoring and containerization',
-      'Data migration and synchronization',
-      'Performance optimization and cost analysis'
-    ]
-  },
-  {
-    slug: 'cost-optimization',
-    title: 'Cost Optimization',
-    category: 'cloud',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    excerpt: 'Intelligent cost optimization by wide range of techniques',
-    description: 'Maximize your cloud ROI with intelligent cost optimization strategies. We analyze your cloud spending patterns and implement cost-saving measures without compromising performance.',
-    features: [
-      'Cloud cost analysis and reporting',
-      'Resource rightsizing recommendations',
-      'Reserved instance and savings plan optimization',
-      'Automated cost anomaly detection',
-      'Multi-cloud cost management'
-    ]
-  },
-  {
-    slug: 'devops-automation',
-    title: 'DevOps & Automation',
-    category: 'cloud',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-    excerpt: 'Automate DevOps and simplify software development',
-    description: 'Streamline your development lifecycle with comprehensive DevOps automation. We implement best practices and tools to accelerate delivery and improve collaboration.',
-    features: [
-      'CI/CD pipeline implementation',
-      'Infrastructure automation',
-      'Configuration management',
-      'Automated testing and deployment',
-      'DevOps culture transformation'
+      'Process-oriented cloud migration journey, using the right architecture, to achieve sustainable, strategic business growth.',
+      'Optimized Efficiency through agile, scalable cloud solutions to retain a competitive advantage over dynamic market conditions.',
+      'Built-in cloud security to effectively reduce expected and unexpected market disruptions and facilitate automated workflow.',
+      'Improved Data Management and Analytics using the latest technologies, for better business decision-making and superior end-user experience.',
+      'Cost optimization with streamlined resource allocation, automated process infrastructure and real-time maintenance.'
     ]
   },
   {
@@ -330,120 +292,120 @@ export const allServices: Service[] = [
 
   // ========== AI SERVICES ==========
   
-//   {
-//     slug: 'rag-solutions',
-//     title: 'RAG Solutions',
-//     category: 'ai',
-//     icon: (
-//       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-//       </svg>
-//     ),
-//     excerpt: 'Retrieval-Augmented Generation for intelligent AI applications',
-//     description: 'Implement cutting-edge RAG (Retrieval-Augmented Generation) systems that combine the power of large language models with your proprietary data. Our RAG solutions enable accurate, context-aware AI responses grounded in your organization\'s knowledge base.',
-//     features: [
-//       'Custom vector database implementation',
-//       'Document ingestion and chunking strategies',
-//       'Semantic search and retrieval optimization',
-//       'LLM integration and prompt engineering',
-//       'Real-time knowledge base updates'
-//     ]
-//   },
-//   {
-//     slug: 'n8n-automation',
-//     title: 'N8N Workflow Automation',
-//     category: 'ai',
-//     icon: (
-//       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-//       </svg>
-//     ),
-//     excerpt: 'Automate complex workflows with the powerful N8N platform',
-//     description: 'Streamline your business operations with N8N, the fair-code workflow automation platform. We design and implement custom automation workflows that connect your apps, databases, and services, eliminating manual tasks and boosting productivity.',
-//     features: [
-//       'Custom workflow design and implementation',
-//       'API integration and data synchronization',
-//       'Event-driven automation triggers',
-//       'Self-hosted or cloud deployment options',
-//       'Workflow monitoring and optimization'
-//     ]
-//   },
-//   {
-//     slug: 'ai-ml-models',
-//     title: 'AI/ML Model Deployment',
-//     category: 'ai',
-//     icon: (
-//       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-//       </svg>
-//     ),
-//     excerpt: 'Deploy and scale AI/ML models in production environments',
-//     description: 'Take your machine learning models from development to production with our comprehensive deployment services. We handle infrastructure setup, model serving, monitoring, and scaling to ensure your AI applications perform reliably at scale.',
-//     features: [
-//       'Model containerization and deployment',
-//       'Auto-scaling and load balancing',
-//       'A/B testing and model versioning',
-//       'Performance monitoring and drift detection',
-//       'GPU-optimized infrastructure'
-//     ]
-//   },
-//   {
-//     slug: 'llm-integration',
-//     title: 'LLM Integration',
-//     category: 'ai',
-//     icon: (
-//       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-//       </svg>
-//     ),
-//     excerpt: 'Integrate large language models into your applications seamlessly',
-//     description: 'Harness the power of GPT-4, Claude, Llama, and other leading LLMs in your applications. We provide end-to-end integration services including API setup, prompt engineering, fine-tuning, and cost optimization strategies.',
-//     features: [
-//       'Multi-LLM provider integration',
-//       'Prompt engineering and optimization',
-//       'Fine-tuning for domain-specific tasks',
-//       'Cost management and token optimization',
-//       'Safety filters and content moderation'
-//     ]
-//   },
-//   {
-//     slug: 'ai-chatbots',
-//     title: 'AI Chatbots & Assistants',
-//     category: 'ai',
-//     icon: (
-//       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
-//       </svg>
-//     ),
-//     excerpt: 'Build intelligent conversational AI solutions for customer engagement',
-//     description: 'Create sophisticated AI-powered chatbots and virtual assistants that understand context, handle complex queries, and provide personalized experiences. Our solutions integrate with your existing systems and scale with your business.',
-//     features: [
-//       'Natural language understanding (NLU)',
-//       'Multi-channel deployment (web, mobile, messaging)',
-//       'Context-aware conversation management',
-//       'CRM and database integration',
-//       'Analytics and conversation insights'
-//     ]
-//   },
-//   {
-//     slug: 'vector-databases',
-//     title: 'Vector Databases',
-//     category: 'ai',
-//     icon: (
-//       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-//       </svg>
-//     ),
-//     excerpt: 'Implement semantic search with advanced vector database solutions',
-//     description: 'Power your AI applications with high-performance vector databases for semantic search, recommendation systems, and similarity matching. We implement and optimize solutions using Pinecone, Weaviate, Qdrant, and other leading vector databases.',
-//     features: [
-//       'Vector database selection and setup',
-//       'Embedding generation and optimization',
-//       'Similarity search implementation',
-//       'Hybrid search (vector + keyword)',
-//       'Performance tuning and scaling'
-//     ]
-//   },
+  {
+    slug: 'rag-solutions',
+    title: 'RAG Solutions',
+    category: 'ai',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      </svg>
+    ),
+    excerpt: 'Retrieval-Augmented Generation for intelligent AI applications',
+    description: 'Implement cutting-edge RAG (Retrieval-Augmented Generation) systems that combine the power of large language models with your proprietary data. Our RAG solutions enable accurate, context-aware AI responses grounded in your organization\'s knowledge base.',
+    features: [
+      'Custom vector database implementation',
+      'Document ingestion and chunking strategies',
+      'Semantic search and retrieval optimization',
+      'LLM integration and prompt engineering',
+      'Real-time knowledge base updates'
+    ]
+  },
+  {
+    slug: 'n8n-automation',
+    title: 'N8N Workflow Automation',
+    category: 'ai',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
+    excerpt: 'Automate complex workflows with the powerful N8N platform',
+    description: 'Streamline your business operations with N8N, the fair-code workflow automation platform. We design and implement custom automation workflows that connect your apps, databases, and services, eliminating manual tasks and boosting productivity.',
+    features: [
+      'Custom workflow design and implementation',
+      'API integration and data synchronization',
+      'Event-driven automation triggers',
+      'Self-hosted or cloud deployment options',
+      'Workflow monitoring and optimization'
+    ]
+  },
+  {
+    slug: 'ai-ml-models',
+    title: 'AI/ML Model Deployment',
+    category: 'ai',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+      </svg>
+    ),
+    excerpt: 'Deploy and scale AI/ML models in production environments',
+    description: 'Take your machine learning models from development to production with our comprehensive deployment services. We handle infrastructure setup, model serving, monitoring, and scaling to ensure your AI applications perform reliably at scale.',
+    features: [
+      'Model containerization and deployment',
+      'Auto-scaling and load balancing',
+      'A/B testing and model versioning',
+      'Performance monitoring and drift detection',
+      'GPU-optimized infrastructure'
+    ]
+  },
+  {
+    slug: 'llm-integration',
+    title: 'LLM Integration',
+    category: 'ai',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+      </svg>
+    ),
+    excerpt: 'Integrate large language models into your applications seamlessly',
+    description: 'Harness the power of GPT-4, Claude, Llama, and other leading LLMs in your applications. We provide end-to-end integration services including API setup, prompt engineering, fine-tuning, and cost optimization strategies.',
+    features: [
+      'Multi-LLM provider integration',
+      'Prompt engineering and optimization',
+      'Fine-tuning for domain-specific tasks',
+      'Cost management and token optimization',
+      'Safety filters and content moderation'
+    ]
+  },
+  {
+    slug: 'ai-chatbots',
+    title: 'AI Chatbots & Assistants',
+    category: 'ai',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+      </svg>
+    ),
+    excerpt: 'Build intelligent conversational AI solutions for customer engagement',
+    description: 'Create sophisticated AI-powered chatbots and virtual assistants that understand context, handle complex queries, and provide personalized experiences. Our solutions integrate with your existing systems and scale with your business.',
+    features: [
+      'Natural language understanding (NLU)',
+      'Multi-channel deployment (web, mobile, messaging)',
+      'Context-aware conversation management',
+      'CRM and database integration',
+      'Analytics and conversation insights'
+    ]
+  },
+  {
+    slug: 'vector-databases',
+    title: 'Vector Databases',
+    category: 'ai',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+      </svg>
+    ),
+    excerpt: 'Implement semantic search with advanced vector database solutions',
+    description: 'Power your AI applications with high-performance vector databases for semantic search, recommendation systems, and similarity matching. We implement and optimize solutions using Pinecone, Weaviate, Qdrant, and other leading vector databases.',
+    features: [
+      'Vector database selection and setup',
+      'Embedding generation and optimization',
+      'Similarity search implementation',
+      'Hybrid search (vector + keyword)',
+      'Performance tuning and scaling'
+    ]
+  },
 ];
 
 // ============================================

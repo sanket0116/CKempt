@@ -29,6 +29,7 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
 
   // Check if we're on a service page or all-services page
   const isServicePage = pathname.startsWith('/services/') || pathname === '/all-services';
+  const isCaseStudiesPage = pathname === '/case-studies';
 
   // Handle dropdown opening
   const handleDropdownOpen = () => {
@@ -74,6 +75,17 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
         </Link>
       );
     }
+
+    if (isCaseStudiesPage) {
+      // On case studies page, navigate to homepage for home link
+      const homeHref = href === '#home' ? '/' : href;
+      return (
+        <Link href={homeHref} onClick={handleClick} className={`px-4 py-2 text-sm font-medium text-gray-300 hover:text-[#FBB900] hover:bg-gray-800 rounded-lg transition-all ${mobile ? 'block' : ''}`}>
+          {children}
+        </Link>
+      );
+    }
+
     return (
       <a href={href} onClick={handleClick} className={`px-4 py-2 text-sm font-medium text-gray-300 hover:text-[#FBB900] hover:bg-gray-800 rounded-lg transition-all ${mobile ? 'block' : ''}`}>
         {children}
@@ -101,7 +113,7 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-1">
             <NavLink href="#home">Home</NavLink>
-            <NavLink href="#about">About Us</NavLink>
+            {/* <NavLink href="#about">About Us</NavLink> */}
 
             {/* Services Mega Menu */}
             <div
@@ -220,7 +232,7 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
                               Client success stories.
                             </p>
                             <Link
-                              href="/#testimonials"
+                              href="/case-studies"
                               onClick={() => setIsServicesDropdownOpen(false)}
                               className="text-[10px] text-[#FBB900] font-semibold hover:text-[#e5a800] transition-colors"
                             >
@@ -259,7 +271,8 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
               )}
             </div>
 
-            <NavLink href="#testimonials">Testimonials</NavLink>
+            <NavLink href="/case-studies">Case Studies</NavLink>
+            <NavLink href="/#testimonials">Testimonials</NavLink>
             <button
               onClick={onContactClick}
               className="ml-2 bg-gradient-to-r from-[#FBB900] to-[#e5a800] text-black px-5 py-2 rounded-full font-semibold hover:shadow-lg transition-all shadow-md text-sm"
@@ -296,6 +309,7 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
               >
                 Services
               </a>
+              <NavLink href="/case-studies" mobile>Case Studies</NavLink>
               <NavLink href="#testimonials" mobile>Testimonials</NavLink>
               <button
                 onClick={() => {
