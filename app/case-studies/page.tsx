@@ -35,7 +35,7 @@ export default function CaseStudies() {
             Client Success Stories
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover how we've helped leading companies transform their cloud infrastructure, 
+            Discover how we&#39;ve helped leading companies transform their cloud infrastructure, 
             optimize operations, and achieve remarkable business outcomes.
           </p>
         </div>

@@ -77,7 +77,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ['Kubernetes', 'Docker', 'GitHub Actions', 'Terraform', 'Prometheus', 'Grafana', 'AWS EKS'],
     image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop&crop=center',
     testimonial: {
-      quote: 'CKempt didn\'t just implement tools—they transformed our entire culture. We\'re now able to innovate and respond to market changes at a pace we never thought possible.',
+      quote: 'CKempt didn&#39;t just implement tools—they transformed our entire culture. We&#39;re now able to innovate and respond to market changes at a pace we never thought possible.',
       author: 'Sarah O\'Connor',
       position: 'VP of Engineering, BostonScally',
     },
@@ -119,7 +119,7 @@ export const caseStudies: CaseStudy[] = [
     technologies: ['AWS Security Hub', 'GuardDuty', 'CloudTrail', 'KMS', 'AWS Organizations', 'Config', 'WAF', 'Shield'],
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop&crop=center',
     testimonial: {
-      quote: 'CKempt\'s expertise in cloud security gave us the confidence to pursue and achieve SOC 2 compliance. Their comprehensive approach covered every aspect of our security needs.',
+      quote: 'CKempt&#39;s expertise in cloud security gave us the confidence to pursue and achieve SOC 2 compliance. Their comprehensive approach covered every aspect of our security needs.',
       author: 'David Richardson',
       position: 'CISO, Microlise Telematics',
     },
