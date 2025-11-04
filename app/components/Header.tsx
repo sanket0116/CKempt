@@ -301,7 +301,7 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
           <div className="md:hidden py-4 border-t border-gray-700">
             <div className="flex flex-col space-y-2">
               <NavLink href="#home" mobile>Home</NavLink>
-              <NavLink href="#about" mobile>About Us</NavLink>
+              <NavLink href="/#about" mobile>About Us</NavLink>
               <a 
                 href="#services" 
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -310,7 +310,7 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
                 Services
               </a>
               <NavLink href="/case-studies" mobile>Case Studies</NavLink>
-              <NavLink href="#testimonials" mobile>Testimonials</NavLink>
+              <NavLink href="/#testimonials" mobile>Testimonials</NavLink>
               <button
                 onClick={() => {
                   setIsMobileMenuOpen(false);

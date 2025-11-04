@@ -58,17 +58,17 @@ export default function ServicesGrid({
   };
 
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white reveal">
+    <section id="services" className="pt-10 pb-4 md:pt-12 md:pb-6 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white reveal">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {title}
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+          <p className="text-sm sm:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed mb-4">
             We are committed to delivering innovation that brings your vision to fruition.
           </p>
-          <p className="text-sm md:text-base text-gray-600 max-w-5xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-gray-600 max-w-5xl mx-auto leading-relaxed">
             As a reliable cloud computing partner, we focus on building a strong foundation of trust and long-term relationships 
             through successfully delivering cloud services and solutions aligned with your vision, goals, and values. Our approach is 
             centered around collaboration in each engagement to bring you the benefit of cloud technology.
@@ -101,7 +101,7 @@ export default function ServicesGrid({
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
-                  className={`group relative bg-white rounded-3xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 hover:border-transparent ${
+                  className={`group relative bg-white rounded-3xl p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 hover:border-transparent flex flex-col h-full ${
                     showCards 
                       ? 'opacity-100 translate-y-0' 
                       : 'opacity-0 translate-y-12'
@@ -113,30 +113,28 @@ export default function ServicesGrid({
                     transitionDelay: showCards ? `${idx * 150}ms` : '0ms' 
                   }}
                 >
-                  {/* Icon */}
-                  <div className="mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FBB900]/10 to-[#FBB900]/5 flex items-center justify-center text-[#FBB900] group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                  {/* Icon and Title */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br from-[#FBB900]/10 to-[#FBB900]/5 flex items-center justify-center text-[#FBB900] group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                       {service.icon}
                     </div>
+                    <h3 className="text-base font-bold text-gray-900 group-hover:text-[#FBB900] transition-colors line-clamp-2">
+                      {service.title}
+                    </h3>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#FBB900] transition-colors">
-                    {service.title}
-                  </h3>
-
                   {/* Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3">
+                  <p className="text-gray-600 text-xs leading-relaxed mb-4 line-clamp-2 flex-grow">
                     {service.excerpt}
                   </p>
 
                   {/* Learn More Link */}
-                  <div className="flex items-center gap-2 text-[#FBB900] font-semibold text-sm">
+                  {/* <div className="flex items-center gap-2 text-[#FBB900] font-semibold text-xs mt-auto">
                     <span>Learn More</span>
                     <svg className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </div>
+                  </div> */}
 
                   {/* Hover gradient overlay */}
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#FBB900]/0 to-[#FBB900]/0 group-hover:from-[#FBB900]/5 group-hover:to-transparent transition-all duration-300 pointer-events-none"></div>

@@ -31,8 +31,14 @@ export default function CaseStudies() {
             </svg>
             Success Stories
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Client Success Stories
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-gray-900 via-[#FBB900] to-gray-900 bg-clip-text text-transparent">
+              Client Success
+            </span>
+            <br />
+            <span className="text-gray-600 text-2xl sm:text-3xl lg:text-4xl font-light">
+              Stories
+            </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Discover how we&#39;ve helped leading companies transform their cloud infrastructure, 
