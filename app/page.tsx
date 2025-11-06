@@ -124,6 +124,16 @@ export default function Home() {
 
       {/* About Us Section */}
       <AboutUs />
+      
+   {/* Stats Section */}
+      <Stats 
+        title="Trusted by Businesses Worldwide"
+        stats={[
+          { value: "60+", label: "Countries We Serve" },
+          { value: "25K+", label: "Customers Worldwide" },
+          { value: "99.99%", label: "Uptime SLA" }
+        ]}
+      />
 
       {/* Services Grid */}
       <ServicesGrid 
@@ -191,16 +201,6 @@ export default function Home() {
               </svg>
             )
           }
-        ]}
-      />
-
-      {/* Stats Section */}
-      <Stats 
-        title="Trusted by Businesses Worldwide"
-        stats={[
-          { value: "60+", label: "Countries We Serve" },
-          { value: "25K+", label: "Customers Worldwide" },
-          { value: "99.99%", label: "Uptime SLA" }
         ]}
       />
 
