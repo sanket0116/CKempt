@@ -38,7 +38,7 @@ export interface Service {
   excerpt: string;
   description: string;
   features: string[];
-  category: 'cloud' | 'devops' | 'ai';
+  category: 'cloud' | 'devops' | 'ai' | 'kubernetes';
   
   // Optional: For service detail pages
   hero?: {
@@ -290,6 +290,268 @@ export const allServices: Service[] = [
     ]
   },
 
+  // ========== KUBERNETES SERVICES ==========
+  {
+    slug: 'kubernetes-consulting',
+    title: 'Kubernetes Consulting',
+    category: 'kubernetes',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v4a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    ),
+    excerpt: 'Expert guidance and best practices for your Kubernetes journey',
+    description: 'Get expert consulting services to design, implement, and optimize your Kubernetes infrastructure. Our certified Kubernetes experts will help you navigate the complexities of container orchestration and build a robust, scalable platform.',
+    features: [
+      'Architecture design and review',
+      'Performance optimization',
+      'Best practices implementation',
+      'Cost optimization strategies',
+      'Multi-cluster strategy'
+    ]
+  },
+  {
+    slug: 'managed-kubernetes',
+    title: 'Managed Kubernetes',
+    category: 'kubernetes',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+      </svg>
+    ),
+    excerpt: 'Fully managed Kubernetes service with 24/7 support',
+    description: 'Focus on your applications while we handle the Kubernetes infrastructure. Our managed service includes monitoring, patching, updates, and expert support to keep your clusters running smoothly.',
+    features: [
+      '24/7 cluster monitoring',
+      'Automated backups',
+      'Security patching',
+      'High availability',
+      'Dedicated support'
+    ]
+  },
+  {
+    slug: 'kubernetes-training',
+    title: 'Kubernetes Training',
+    category: 'kubernetes',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      </svg>
+    ),
+    excerpt: 'Comprehensive training programs for teams of all skill levels',
+    description: 'Upskill your team with our hands-on Kubernetes training programs. From beginner to advanced levels, we offer customized training to match your team\'s needs and accelerate your cloud-native journey.',
+    features: [
+      'Beginner to advanced courses',
+      'Hands-on labs',
+      'Certification preparation',
+      'Customized curriculum',
+      'On-site or virtual training'
+    ]
+  },
+  {
+    slug: 'kubernetes-migration',
+    title: 'Kubernetes Migration',
+    category: 'kubernetes',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+      </svg>
+    ),
+    excerpt: 'Seamless migration of your applications to Kubernetes',
+    description: 'Migrate your applications to Kubernetes with minimal downtime. Our experts will assess your current infrastructure, plan the migration, and execute it with precision to ensure a smooth transition.',
+    features: [
+      'Application assessment',
+      'Migration planning',
+      'Data migration',
+      'Minimal downtime',
+      'Post-migration support'
+    ]
+  },
+  {
+    slug: 'kubernetes-security',
+    title: 'Kubernetes Security',
+    category: 'kubernetes',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+      </svg>
+    ),
+    excerpt: 'Comprehensive security solutions for your Kubernetes clusters',
+    description: 'Protect your Kubernetes environment with our comprehensive security solutions. From cluster hardening to runtime protection, we ensure your containerized applications are secure and compliant.',
+    features: [
+      'Cluster hardening',
+      'Network policies',
+      'Runtime security',
+      'Compliance auditing',
+      'Vulnerability scanning'
+    ]
+  },
+  {
+    slug: 'kubernetes-solutions',
+    title: 'Kubernetes Solutions',
+    category: 'kubernetes',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+      </svg>
+    ),
+    excerpt: 'Enterprise-grade Kubernetes solutions for container orchestration',
+    description: 'Deploy, manage, and scale containerized applications with our comprehensive Kubernetes solutions. We provide end-to-end Kubernetes services from cluster setup to application deployment and monitoring.',
+    features: [
+      'Managed Kubernetes clusters with high availability',
+      'Automated scaling and self-healing',
+      'CI/CD pipeline integration',
+      'Security and compliance management',
+      '24/7 monitoring and support'
+    ],
+    hero: {
+      title: 'Kubernetes Cloud Solutions',
+      description: 'Accelerate your cloud-native journey with our fully managed Kubernetes services. Deploy, scale, and manage containerized applications with confidence.',
+      animationPath: '/kubernetes-animation.json'
+    },
+    detailedFeatures: [
+      {
+        title: 'Automated Scaling',
+        description: 'Dynamically scale your applications based on demand with horizontal pod autoscaling.',
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+          </svg>
+        )
+      },
+      {
+        title: 'High Availability',
+        description: 'Ensure your applications are always available with self-healing and automated failover.',
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+          </svg>
+        )
+      },
+      {
+        title: 'Multi-Cloud Ready',
+        description: 'Deploy and manage Kubernetes clusters across multiple cloud providers seamlessly.',
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z" />
+          </svg>
+        )
+      }
+    ],
+    benefits: [
+      {
+        title: 'Reduced Complexity',
+        description: 'Simplify container management with our intuitive Kubernetes platform and expert support.',
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+          </svg>
+        )
+      },
+      {
+        title: 'Cost Effective',
+        description: 'Optimize resource utilization and reduce infrastructure costs with efficient container orchestration.',
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.542 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.616 1.129 2.872 1.104V16a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 14.766 14 13.991 14 13c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.849V7.907c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.617-1.129-2.873-1.104V5z" clipRule="evenodd" />
+          </svg>
+        )
+      },
+      {
+        title: 'Enterprise Security',
+        description: 'Built-in security features including RBAC, network policies, and automated certificate management.',
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+          </svg>
+        )
+      }
+    ],
+    processSteps: [
+      {
+        number: "1",
+        title: "Assessment",
+        description: "We analyze your current infrastructure and application requirements.",
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+          </svg>
+        )
+      },
+      {
+        number: "2",
+        title: "Cluster Setup",
+        description: "We deploy and configure your Kubernetes cluster according to best practices.",
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+          </svg>
+        )
+      },
+      {
+        number: "3",
+        title: "Deployment",
+        description: "We containerize and deploy your applications to the Kubernetes cluster.",
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        )
+      },
+      {
+        number: "4",
+        title: "Optimization",
+        description: "We fine-tune performance and implement monitoring solutions.",
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        )
+      }
+    ],
+    caseStudies: [
+      {
+        title: "Scaling E-commerce Platform",
+        client: "Retail Giant",
+        description: "Scaled to handle 10x traffic during peak seasons with zero downtime.",
+        results: [
+          "Reduced infrastructure costs by 40%",
+          "Improved deployment frequency by 300%",
+          "Achieved 99.99% uptime"
+        ]
+      },
+      {
+        title: "Financial Services Modernization",
+        client: "Global Bank",
+        description: "Modernized legacy applications with Kubernetes for better scalability.",
+        results: [
+          "Reduced time-to-market by 60%",
+          "Improved resource utilization by 50%",
+          "Enhanced security and compliance"
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What is Kubernetes and why should I use it?",
+        answer: "Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It helps you optimize resource utilization, improve application availability, and simplify operations."
+      },
+      {
+        question: "How does your managed Kubernetes service differ from others?",
+        answer: "Our managed Kubernetes service includes 24/7 expert support, automated security updates, built-in monitoring, and cost optimization features. We handle the complexity of Kubernetes so you can focus on your applications."
+      },
+      {
+        question: "What kind of support do you offer?",
+        answer: "We provide 24/7 support with guaranteed response times, a dedicated account manager, and access to Kubernetes experts. Our support includes cluster management, troubleshooting, and best practices guidance."
+      },
+      {
+        question: "Can I migrate my existing applications to your Kubernetes platform?",
+        answer: "Yes, we offer migration services to help containerize and deploy your existing applications to our Kubernetes platform with minimal downtime. Our team will handle the entire migration process from planning to execution."
+      }
+    ]
+  },
+
   // ========== AI SERVICES ==========
   
   {
@@ -425,6 +687,12 @@ export const categorizedServices = {
     icon: s.icon,
     excerpt: s.excerpt
   })),
+  kubernetes: allServices.filter(s => s.category === 'kubernetes').map(s => ({
+    slug: s.slug,
+    title: s.title,
+    icon: s.icon,
+    excerpt: s.excerpt
+  })),
   ai: allServices.filter(s => s.category === 'ai').map(s => ({
     slug: s.slug,
     title: s.title,
@@ -441,7 +709,7 @@ export const getServiceBySlug = (slug: string): Service | undefined => {
   return allServices.find(s => s.slug === slug);
 };
 
-export const getServicesByCategory = (category: 'cloud' | 'devops' | 'ai'): Service[] => {
+export const getServicesByCategory = (category: 'cloud' | 'devops' | 'kubernetes' | 'ai'): Service[] => {
   return allServices.filter(s => s.category === category);
 };
 

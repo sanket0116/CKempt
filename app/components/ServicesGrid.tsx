@@ -21,6 +21,7 @@ interface ServicesGridProps {
   categorizedServices: {
     cloud: Service[];
     devops: Service[];
+    kubernetes: Service[];
     ai: Service[];
   };
   categoryLabels?: CategoryConfig[];
@@ -33,7 +34,8 @@ export default function ServicesGrid({
   categoryLabels = [
     { key: 'cloud', label: 'Cloud Services' },
     { key: 'devops', label: 'DevOps & Automation' },
-    { key: 'ai', label: 'AI Services' }
+    { key: 'kubernetes', label: 'Kubernetes' },
+    // { key: 'ai', label: 'AI Services' }
   ]
 }: ServicesGridProps) {
   const categories = categoryLabels.map(config => ({

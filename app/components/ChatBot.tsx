@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import CallbackForm from './CallbackForm';
+import { allServices } from '@/app/data/allServices';
 
 interface ChatOption {
   id: string;
@@ -204,24 +205,71 @@ export default function ChatBot() {
         }
       ]
     },
+    // {
     {
-      service: "AI/ML Solutions",
+      service: "Kubernetes Solutions",
       icon: (
-        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20 9V7c0-1.1-.9-2-2-2h-3c0-1.66-1.34-3-3-3S9 3.34 9 5H6c-1.1 0-2 .9-2 2v2c-1.66 0-3 1.34-3 3s1.34 3 3 3v4c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-4c1.66 0 3-1.34 3-3s-1.34-3-3-3zm-2 10H6V7h12v12zm-9-6c-.83 0-1.5-.67-1.5-1.5S8.17 10 9 10s1.5.67 1.5 1.5S9.83 13 9 13zm7.5-1.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5zM8 15h8v2H8v-2z"/>
+        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
         </svg>
       ),
       faqs: [
         {
-          question: "Can you deploy custom AI models?",
-          answer: "Yes, we deploy and scale custom AI/ML models with containerization, auto-scaling, and GPU-optimized infrastructure."
+          question: "What Kubernetes services do you offer?",
+          answer: "We provide end-to-end Kubernetes solutions including cluster management, migration, security, training, and 24/7 support for your containerized applications."
         },
         {
-          question: "Do you support LLM integration?",
-          answer: "Absolutely! We integrate GPT-4, Claude, Llama, and other LLMs with prompt engineering and fine-tuning capabilities."
+          question: "Can you help migrate our applications to Kubernetes?",
+          answer: "Absolutely! Our experts handle the entire migration process with minimal downtime, including assessment, containerization, and deployment to production."
+        },
+        {
+          question: "How do you ensure Kubernetes security?",
+          answer: "We implement comprehensive security measures including RBAC, network policies, pod security policies, and continuous vulnerability scanning to protect your clusters."
         }
       ]
-    }
+    },
+    // {
+    // Kubernetes Services Section - Dynamically populated
+    ...allServices
+      .filter(service => service.category === 'kubernetes')
+      .map(service => ({
+        service: service.title,
+        icon: service.icon,
+        faqs: [
+          {
+            question: `What does ${service.title} include?`,
+            answer: service.description
+          },
+          ...(service.features?.length ? [{
+            question: `Key features of ${service.title}?`,
+            answer: service.features.join('\n• ')
+          }] : []),
+          ...(service.faqs || []).map(faq => ({
+            question: faq.question,
+            answer: faq.answer
+          }))
+        ]
+      })),
+    // {
+    //   service: "AI/ML Solutions",
+    //   icon: (
+    //     <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+    //       <path d="M20 9V7c0-1.1-.9-2-2-2h-3c0-1.66-1.34-3-3-3S9 3.34 9 5H6c-1.1 0-2 .9-2 2v2c-1.66 0-3 1.34-3 3s1.34 3 3 3v4c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-4c1.66 0 3-1.34 3-3s-1.34-3-3-3zm-2 10H6V7h12v12zm-9-6c-.83 0-1.5-.67-1.5-1.5S8.17 10 9 10s1.5.67 1.5 1.5S9.83 13 9 13zm7.5-1.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5z"/>
+    //     </svg>
+    //   ),67 1.5 1.5zM8 15h8v2H8v-2z"/>
+    //     </svg>
+    //   ),
+    //   faqs: [
+    //     {
+    //       question: "Can you deploy custom AI models?",
+    //       answer: "Yes, we deploy and scale custom AI/ML models with containerization, auto-scaling, and GPU-optimized infrastructure."
+    //     },
+    //     {
+    //       question: "Do you support LLM integration?",
+    //       answer: "Absolutely! We integrate GPT-4, Claude, Llama, and other LLMs with prompt engineering and fine-tuning capabilities."
+    //     }
+    //   ]
+    // }
   ];
 
   const visibleServices = showAllServices ? serviceFAQs : serviceFAQs.slice(0, 6);

@@ -16,6 +16,7 @@ interface HeaderProps {
   categorizedServices: {
     cloud: Service[];
     devops: Service[];
+    kubernetes: Service[];
     ai: Service[];
   };
 }
@@ -143,7 +144,8 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
                         {[
                           { key: 'cloud', label: 'Cloud Services' },
                           { key: 'devops', label: 'DevOps & Automation' },
-                          { key: 'ai', label: 'AI' }
+                          { key: 'kubernetes', label: 'Kubernetes' },
+                          // { key: 'ai', label: 'AI' }
                         ]
                           .filter((tab) => categorizedServices[tab.key as keyof typeof categorizedServices]?.length > 0)
                           .map((tab) => (
