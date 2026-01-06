@@ -35,7 +35,7 @@ export default function AllServicesPage() {
     },
     // You can add more section types
     {
-      type: 'diagram' as const,
+      type: 'architecture' as const,
       title: 'Our Cloud Architecture',
       items: [
         'Multi-cloud compatibility',
