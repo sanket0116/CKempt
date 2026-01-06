@@ -11,17 +11,17 @@ export default function CaseStudies() {
   const [selectedStudy, setSelectedStudy] = useState<string | null>(null);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
-  const selectedCaseStudy = selectedStudy 
-    ? caseStudies.find(cs => cs.id === selectedStudy) 
+  const selectedCaseStudy = selectedStudy
+    ? caseStudies.find(cs => cs.id === selectedStudy)
     : null;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
-      <Header 
+      <Header
         onContactClick={() => setIsContactModalOpen(true)}
         categorizedServices={categorizedServices}
       />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
@@ -41,7 +41,7 @@ export default function CaseStudies() {
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover how we&#39;ve helped leading companies transform their cloud infrastructure, 
+            Discover how we&#39;ve helped leading companies transform their cloud infrastructure,
             optimize operations, and achieve remarkable business outcomes.
           </p>
         </div>
@@ -60,8 +60,8 @@ export default function CaseStudies() {
                 {/* Image */}
                 <div className="relative mb-5 rounded-xl overflow-hidden shadow-lg">
                   {typeof study.image === 'string' ? (
-                    <img 
-                      src={study.image} 
+                    <img
+                      src={study.image}
                       alt={`${study.client} case study`}
                       className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
@@ -80,10 +80,10 @@ export default function CaseStudies() {
                     <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">{study.industry}</p>
                   </div>
                   <div className="w-10 h-10 bg-gradient-to-br from-[#FBB900]/20 to-[#FBB900]/10 rounded-full flex items-center justify-center group-hover:from-[#FBB900]/30 group-hover:to-[#FBB900]/20 transition-all duration-300 ml-3">
-                    <svg 
-                      className="w-5 h-5 text-[#FBB900] transform group-hover:translate-x-0.5 group-hover:scale-110 transition-all duration-300" 
-                      fill="none" 
-                      stroke="currentColor" 
+                    <svg
+                      className="w-5 h-5 text-[#FBB900] transform group-hover:translate-x-0.5 group-hover:scale-110 transition-all duration-300"
+                      fill="none"
+                      stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -138,11 +138,11 @@ export default function CaseStudies() {
 
       {/* Detailed Modal */}
       {selectedCaseStudy && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
           onClick={() => setSelectedStudy(null)}
         >
-          <div 
+          <div
             className="bg-white rounded-2xl max-w-4xl w-full my-8 border border-gray-200 shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
@@ -269,12 +269,12 @@ export default function CaseStudies() {
         </div>
       )}
 
-      <ContactModal 
-        isOpen={isContactModalOpen} 
-        onClose={() => setIsContactModalOpen(false)} 
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
       />
 
-      <Footer 
+      <Footer
         companyName="CKempt"
         companyDescription="Empowering businesses with innovative cloud solutions since 2015."
         socialLinks={{

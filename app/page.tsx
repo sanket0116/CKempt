@@ -108,13 +108,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header with Mega Menu */}
-      <Header 
+      <Header
         onContactClick={() => setIsContactOpen(true)}
         categorizedServices={categorizedServices}
       />
 
       {/* Hero Section */}
-      <Hero 
+      <Hero
         title="Transform Your Business with Cloud Solutions"
         subtitle="Accelerate innovation, reduce costs, and scale effortlessly with our enterprise cloud infrastructure and expert support."
         primaryButtonText="Get Started"
@@ -124,9 +124,9 @@ export default function Home() {
 
       {/* About Us Section */}
       <AboutUs />
-      
-   {/* Stats Section */}
-      <Stats 
+
+      {/* Stats Section */}
+      <Stats
         title="Trusted by Businesses Worldwide"
         stats={[
           { value: "60+", label: "Countries We Serve" },
@@ -136,19 +136,19 @@ export default function Home() {
       />
 
       {/* Services Grid */}
-      <ServicesGrid 
+      <ServicesGrid
         title="Our Services"
         subtitle="Comprehensive cloud solutions tailored to your business needs"
         categorizedServices={categorizedServices}
       />
 
       {/* Why Partner Section */}
-      <WhyPartner 
+      <WhyPartner
         title="Why Partner with CKempt?"
         subtitle="Experience the difference of working with cloud experts who prioritize your success, security, and scalability."
         benefits={[
-          { 
-            title: "High Reliability", 
+          {
+            title: "High Reliability",
             description: "Industry-leading 99.99% uptime guarantee with multi-region redundancy and automatic failover protection.",
             icon: (
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -156,8 +156,8 @@ export default function Home() {
               </svg>
             )
           },
-          { 
-            title: "Enterprise Security", 
+          {
+            title: "Enterprise Security",
             description: "Bank-level encryption, SOC 2 compliance, and advanced threat protection to safeguard your critical data.",
             icon: (
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -165,8 +165,8 @@ export default function Home() {
               </svg>
             )
           },
-          { 
-            title: "Global Infrastructure", 
+          {
+            title: "Global Infrastructure",
             description: "Lightning-fast performance with edge locations in 60+ countries and intelligent traffic routing.",
             icon: (
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -174,8 +174,8 @@ export default function Home() {
               </svg>
             )
           },
-          { 
-            title: "Flexible Architecture", 
+          {
+            title: "Flexible Architecture",
             description: "Hybrid and multi-cloud solutions designed to scale with your business growth and evolving needs.",
             icon: (
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,8 +183,8 @@ export default function Home() {
               </svg>
             )
           },
-          { 
-            title: "Cost Efficiency", 
+          {
+            title: "Cost Efficiency",
             description: "Optimize your cloud spending with intelligent resource allocation and transparent, predictable pricing.",
             icon: (
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -192,8 +192,8 @@ export default function Home() {
               </svg>
             )
           },
-          { 
-            title: "Expert Support", 
+          {
+            title: "Expert Support",
             description: "24/7 access to certified cloud architects and engineers committed to your success.",
             icon: (
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -205,7 +205,7 @@ export default function Home() {
       />
 
       {/* Team Section */}
-      <Team 
+      <Team
         title="Meet Our Team"
         subtitle="Expert cloud architects and engineers dedicated to your success"
         members={[
@@ -244,7 +244,7 @@ export default function Home() {
       />
 
       {/* Testimonials Section */}
-      <Testimonials 
+      <Testimonials
         title="What Our Clients Say"
         subtitle="Trusted by businesses worldwide"
         testimonials={[
@@ -273,13 +273,13 @@ export default function Home() {
       />
 
       {/* Contact Modal */}
-      <ContactModal 
+      <ContactModal
         isOpen={isContactOpen}
         onClose={() => setIsContactOpen(false)}
       />
 
       {/* Footer */}
-      <Footer 
+      <Footer
         companyName="CKempt"
         companyDescription="Empowering businesses with innovative cloud solutions since 2015."
         socialLinks={{
