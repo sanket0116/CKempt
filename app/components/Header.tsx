@@ -16,6 +16,7 @@ interface HeaderProps {
   categorizedServices: {
     cloud: Service[];
     devops: Service[];
+    kubernetes: Service[];
     ai: Service[];
   };
 }
@@ -27,8 +28,9 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
   const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
 
-  // Check if we're on a service page
-  const isServicePage = pathname.startsWith('/services/');
+  // Check if we're on a service page or all-services page
+  const isServicePage = pathname.startsWith('/services/') || pathname === '/all-services';
+  const isCaseStudiesPage = pathname === '/case-studies';
 
   // Handle dropdown opening
   const handleDropdownOpen = () => {
@@ -74,6 +76,17 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
         </Link>
       );
     }
+
+    if (isCaseStudiesPage) {
+      // On case studies page, navigate to homepage for home link
+      const homeHref = href === '#home' ? '/' : href;
+      return (
+        <Link href={homeHref} onClick={handleClick} className={`px-4 py-2 text-sm font-medium text-gray-300 hover:text-[#FBB900] hover:bg-gray-800 rounded-lg transition-all ${mobile ? 'block' : ''}`}>
+          {children}
+        </Link>
+      );
+    }
+
     return (
       <a href={href} onClick={handleClick} className={`px-4 py-2 text-sm font-medium text-gray-300 hover:text-[#FBB900] hover:bg-gray-800 rounded-lg transition-all ${mobile ? 'block' : ''}`}>
         {children}
@@ -91,6 +104,9 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
               <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
               </svg>
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
 
             </div>
             <span className="text-xl font-bold text-[#FBB900]">
@@ -101,7 +117,7 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-1">
             <NavLink href="#home">Home</NavLink>
-            <NavLink href="#about">About Us</NavLink>
+            {/* <NavLink href="#about">About Us</NavLink> */}
 
             {/* Services Mega Menu */}
             <div
@@ -191,7 +207,10 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
               )}
             </div>
 
-            <NavLink href="#testimonials">Testimonials</NavLink>
+            <NavLink href="/blogs">Blog</NavLink>
+
+            <NavLink href="/case-studies">Case Studies</NavLink>
+            <NavLink href="/#testimonials">Testimonials</NavLink>
             <button
               onClick={onContactClick}
               className="ml-2 bg-gradient-to-r from-[#FBB900] to-[#e5a800] text-black px-5 py-2 rounded-full font-semibold hover:shadow-lg transition-all shadow-md text-sm"
