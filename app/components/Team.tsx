@@ -12,85 +12,98 @@ interface TeamMember {
   email?: string;
 }
 
-interface TeamProps {
-  title?: string;
-  subtitle?: string;
-  members: TeamMember[];
-}
-
-export default function Team({ 
-  title = "Meet Our Team",
-  subtitle = "Experienced professionals dedicated to your success",
-  members 
-}: TeamProps) {
+export default function Team() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  // Team data
+  const members: TeamMember[] = [
+    {
+      name: "Chetan Agrawal",
+      role: "Cloud & DevOps Expert",
+      bio: "With 18+ years in IT and 7+ years in AWS, I specialize in architecting highly available, scalable cloud infrastructures. Passionate about automation and sharing knowledge through practical, hands-on training.",
+      image: "/image/team/chetan Agarwal.png",
+      linkedin: 'https://www.linkedin.com/in/chetan-agrawal-30107310/',
+      email: "chetan@ckempt.com"
+    },
+    {
+      name: "Ranjeet Murade",
+      role: "Solution & Enterprise Architecture Consultant",
+      bio: "I help organisations translate business challenges into modern, scalable cloud and AI solutions. With 19+ years across solution consulting, pre-sales, cloud architecture, and digital transformation.",
+      image: "/image/team/ranjeet murade.jpg",
+      linkedin: 'https://www.linkedin.com/in/ranjeet-murade-66707a104/',
+      email: "ranjeet@ckempt.com"
+    }
+  ];
+
   return (
-    <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-gray-50 to-white reveal">
+    <section id="team" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            {title}
+        {/* Header - Left Aligned */}
+        <div className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            THE TEAM
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            {subtitle}
-          </p>
+          <div className="w-24 h-1 bg-[#FBB900]"></div>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Team Grid - Compact and elegant */}
+        <div className="flex flex-wrap justify-center gap-6 max-w-3xl mx-auto">
           {members.map((member, index) => (
             <div
               key={index}
-              className="group"
+              className="w-full sm:w-[calc(50%-12px)] max-w-[340px]"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="relative bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg">
-                {/* Image Container */}
-                <div className="relative h-56 bg-gradient-to-br from-[#FBB900]/20 to-[#FBB900]/5 overflow-hidden">
+              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:border-[#FBB900] hover:shadow-md">
+                {/* Horizontal Layout: Image left, Name/Role right */}
+                <div className="flex items-start gap-4 p-5">
+                  {/* Circular Image - Left */}
                   {member.image ? (
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
+                    <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#FBB900] flex-shrink-0">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#FBB900]/30 to-[#FBB900]/10 flex items-center justify-center">
-                        <svg
-                          className="w-16 h-16 text-[#FBB900]"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                        </svg>
-                      </div>
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#FBB900]/20 to-[#FBB900]/10 flex items-center justify-center border-2 border-[#FBB900] flex-shrink-0">
+                      <svg
+                        className="w-10 h-10 text-[#FBB900]"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                      </svg>
                     </div>
                   )}
+
+                  {/* Name and Role - Right */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-xs font-semibold text-[#FBB900]">
+                      {member.role}
+                    </p>
+                  </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm font-semibold text-[#FBB900] mb-3">
-                    {member.role}
-                  </p>
+                {/* Bio and Links */}
+                <div className="px-5 pb-5">
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">
                     {member.bio}
                   </p>
 
                   {/* Social Links */}
-                  <div className="flex gap-2 pt-4 border-t border-gray-200">
+                  <div className="flex gap-2 pt-3 border-t border-gray-100">
                     {member.linkedin && (
                       <a
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#FBB900] hover:text-black transition-all duration-300"
+                        className="w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#FBB900] hover:text-white transition-all"
                         aria-label="LinkedIn"
                       >
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -98,23 +111,10 @@ export default function Team({
                         </svg>
                       </a>
                     )}
-                    {member.twitter && (
-                      <a
-                        href={member.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#FBB900] hover:text-black transition-all duration-300"
-                        aria-label="Twitter"
-                      >
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                        </svg>
-                      </a>
-                    )}
                     {member.email && (
                       <a
                         href={`mailto:${member.email}`}
-                        className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#FBB900] hover:text-black transition-all duration-300"
+                        className="w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#FBB900] hover:text-white transition-all"
                         aria-label="Email"
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

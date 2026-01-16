@@ -1,81 +1,99 @@
 'use client';
 
-interface Testimonial {
-  name: string;
-  role: string;
-  company: string;
-  content: string;
-  rating?: number;
-  image?: string;
-}
+export default function Testimonials() {
+  const caseStudies = [
+    {
+      title: "Kubernetes Migration for E-Commerce Platform",
+      description: "Migrated a legacy monolith to microservices on Kubernetes, achieving 99.99% uptime and reducing infrastructure costs by 40% while scaling to handle 10x traffic during peak seasons.",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop"
+    },
+    {
+      title: "AWS Cloud Modernization for FinTech Startup",
+      description: "Architected and deployed a secure, scalable AWS infrastructure with automated CI/CD pipelines, enabling the team to ship features 5x faster with zero-downtime deployments.",
+      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop"
+    },
+    {
+      title: "DevOps Transformation for Healthcare SaaS",
+      description: "Implemented Infrastructure as Code with Terraform, automated monitoring, and established DevOps best practices, reducing deployment time from days to minutes.",
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
+    }
+  ];
 
-interface TestimonialsProps {
-  title?: string;
-  subtitle?: string;
-  testimonials: Testimonial[];
-}
+  const clients = [
+    { name: "FinTech Co" },
+    { name: "HealthTech" },
+    { name: "E-Commerce" },
+    { name: "SaaS Platform" },
+    { name: "Enterprise" },
+    { name: "Retail Tech" }
+  ];
 
-export default function Testimonials({ 
-  title = "What Our Clients Say", 
-  subtitle = "Don't just take our word for it - hear from our satisfied clients",
-  testimonials 
-}: TestimonialsProps) {
   return (
-    <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 bg-white reveal">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            {title}
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            {subtitle}
-          </p>
-        </div>
+    <>
+      {/* Case Studies Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="mb-12">
+            <p className="text-xs font-bold text-[#FBB900] tracking-widest mb-3">OUR CASE STUDIES</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Recently Completed Projects
+            </h2>
+          </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index}
-              className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-200 hover:border-[#FBB900] hover:shadow-xl transition-all duration-300"
-            >
-              {/* Rating Stars */}
-              {testimonial.rating && (
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-[#FBB900]" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-              )}
-
-              {/* Testimonial Content */}
-              <p className="text-gray-700 leading-relaxed mb-6 italic">
-                &ldquo;{testimonial.content}&rdquo;
-              </p>
-
-              {/* Author Info */}
-              <div className="flex items-center gap-4">
-                {/* Avatar */}
-                <div className="w-12 h-12 bg-gradient-to-br from-[#FBB900] to-[#e5a800] rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white font-bold text-lg">
-                    {testimonial.name.charAt(0)}
-                  </span>
+          {/* Case Studies Grid with Criss-Cross Pattern */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {caseStudies.map((study, index) => (
+              <div
+                key={index}
+                className={`group cursor-pointer flex ${index % 2 === 0 ? 'flex-col' : 'flex-col-reverse'}`}
+              >
+                {/* Image */}
+                <div className="relative h-56 bg-gray-100 rounded-lg overflow-hidden mb-4">
+                  <img
+                    src={study.image}
+                    alt={study.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
 
-                {/* Details */}
+                {/* Content */}
                 <div>
-                  <div className="font-bold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600">{testimonial.role}</div>
-                  <div className="text-sm text-[#FBB900] font-semibold">{testimonial.company}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#FBB900] transition-colors">
+                    {study.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {study.description}
+                  </p>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Clients Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <p className="text-xs font-bold text-[#FBB900] tracking-widest mb-3">OUR CLIENTS</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Who We Are Associated With
+            </h2>
+          </div>
+
+          {/* Client Logos Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+            {clients.map((client, index) => (
+              <div key={index} className="flex items-center justify-center p-4 opacity-60 hover:opacity-100 transition-all">
+                <div className="h-12 w-24 bg-gray-200 rounded flex items-center justify-center border border-gray-300">
+                  <span className="text-xs text-gray-600 font-semibold">{client.name}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
