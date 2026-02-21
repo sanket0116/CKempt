@@ -18,9 +18,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "CKempt | Cloud Consulting & Digital Transformation",
+  title: "Axiicore | Cloud Consulting & Digital Transformation",
   description:
-    "CKempt helps you modernize, secure, and optimize on the cloud with migration, DevOps, security, cost optimization, and managed services.",
+    "Axiicore helps you modernize, secure, and optimize on the cloud with migration, DevOps, security, cost optimization, and managed services.",
 };
 
 export default function RootLayout({

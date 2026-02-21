@@ -35,7 +35,79 @@ export default function ServicePage() {
     );
   }
 
-  // Use ServiceTemplate for all services
+  // Check if service has detailed content (features, process, case studies, FAQs)
+  const hasDetailedContent = service.detailedFeatures || service.processSteps || service.caseStudies || service.faqs;
+
+  // If service has detailed content, use ServiceDetail component
+  if (hasDetailedContent) {
+    const processSteps = service.processSteps || defaultProcessSteps;
+    const caseStudies = service.caseStudies || defaultCaseStudies;
+    const faqs = service.faqs || getDefaultFAQs(service.title);
+    const features = service.detailedFeatures || service.features.map((feature) => ({
+      title: feature,
+      description: `Comprehensive ${feature.toLowerCase()} tailored to your business needs.`,
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      )
+    }));
+
+    return (
+      <div className="min-h-screen bg-white">
+        <Header
+          onContactClick={() => setIsContactOpen(true)}
+          categorizedServices={categorizedServices}
+        />
+
+        <ServiceDetail
+          hero={{
+            title: service.title,
+            description: service.description,
+            animationPath: "/cloud-animation.json"
+          }}
+          features={{
+            title: "Key Features",
+            subtitle: `Everything included in our ${service.title} service`,
+            items: features
+          }}
+          process={{
+            title: "Our Process",
+            subtitle: "How we deliver exceptional results for your business",
+            steps: processSteps
+          }}
+          caseStudies={{
+            title: "Success Stories",
+            subtitle: "See how we've helped businesses like yours succeed",
+            items: caseStudies
+          }}
+          faqs={{
+            title: "Frequently Asked Questions",
+            subtitle: `Common questions about ${service.title}`,
+            items: faqs
+          }}
+        />
+
+        <ContactModal
+          isOpen={isContactOpen}
+          onClose={() => setIsContactOpen(false)}
+        />
+
+        <Footer
+          companyName="Axiicore"
+          companyDescription="Empowering businesses with innovative cloud solutions since 2015."
+          socialLinks={{
+            linkedin: "https://linkedin.com",
+            twitter: "https://twitter.com",
+            facebook: "https://facebook.com"
+          }}
+          contactEmail="support@axiicore.com"
+        />
+      </div>
+    );
+  }
+
+  // Otherwise, use simple ServiceTemplate for overview
   const featureSections = [];
   const itemsPerSection = 4;
 

@@ -275,14 +275,14 @@ export default function CaseStudies() {
       />
 
       <Footer
-        companyName="CKempt"
+        companyName="Axiicore"
         companyDescription="Empowering businesses with innovative cloud solutions since 2015."
         socialLinks={{
           linkedin: "https://linkedin.com",
           twitter: "https://twitter.com",
           facebook: "https://facebook.com"
         }}
-        contactEmail="support@ckempt.com"
+        contactEmail="support@axiicore.com"
       />
     </div>
   );

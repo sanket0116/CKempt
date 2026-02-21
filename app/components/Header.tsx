@@ -99,19 +99,8 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 bg-gradient-to-br from-[#FBB900] to-[#e5a800] rounded-lg flex items-center justify-center shadow-md">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-              </svg>
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-              </svg>
-
-            </div>
-            <span className="text-xl font-bold text-[#FBB900]">
-              CKempt
-            </span>
+          <Link href="/" className="flex items-center">
+            <img src="/image/logo2.png" alt="Axiicore Logo" className="h-10 w-auto object-contain" />
           </Link>
 
           {/* Desktop Menu */}
@@ -207,10 +196,7 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
               )}
             </div>
 
-            <NavLink href="/blogs">Blog</NavLink>
-
             <NavLink href="/case-studies">Case Studies</NavLink>
-            <NavLink href="/#testimonials">Testimonials</NavLink>
             <button
               onClick={onContactClick}
               className="ml-2 bg-gradient-to-r from-[#FBB900] to-[#e5a800] text-black px-5 py-2 rounded-full font-semibold hover:shadow-lg transition-all shadow-md text-sm"

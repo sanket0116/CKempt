@@ -16,7 +16,7 @@ interface WhyPartnerProps {
 }
 
 export default function WhyPartner({
-  title = "Why Partner with CKempt?",
+  title = "Why Partner with Axiicore?",
   subtitle = "Experience the difference with our comprehensive cloud solutions",
   benefits
 }: WhyPartnerProps) {
@@ -44,29 +44,25 @@ export default function WhyPartner({
                 <div key={index} className="bg-white rounded-lg shadow-sm overflow-hidden">
                   <button
                     onClick={() => setActiveTab(activeTab === index ? -1 : index)}
-                    className={`w-full text-left p-2 transition-all duration-300 ${
-                      activeTab === index ? 'bg-[#FBB900]/10' : ''
-                    }`}
+                    className={`w-full text-left p-2 transition-all duration-300 ${activeTab === index ? 'bg-[#FBB900]/10' : ''
+                      }`}
                   >
                     <div className="flex items-center justify-between gap-3">
                       <div className="flex items-center gap-2">
-                        <div className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all ${
-                          activeTab === index
+                        <div className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all ${activeTab === index
                             ? 'bg-[#FBB900] text-black'
                             : 'bg-gray-100 text-gray-600'
-                        }`}>
+                          }`}>
                           {benefit.icon}
                         </div>
-                        <h3 className={`text-sm font-medium transition-colors ${
-                          activeTab === index ? 'text-gray-900' : 'text-gray-700'
-                        }`}>
+                        <h3 className={`text-sm font-medium transition-colors ${activeTab === index ? 'text-gray-900' : 'text-gray-700'
+                          }`}>
                           {benefit.title}
                         </h3>
                       </div>
                       <svg
-                        className={`w-3.5 h-3.5 text-gray-400 transition-transform ${
-                          activeTab === index ? 'rotate-180' : ''
-                        }`}
+                        className={`w-3.5 h-3.5 text-gray-400 transition-transform ${activeTab === index ? 'rotate-180' : ''
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -75,14 +71,14 @@ export default function WhyPartner({
                       </svg>
                     </div>
                   </button>
-                  
+
                   {/* Mobile Content - Shown when active */}
                   {activeTab === index && (
                     <div className="p-2 pt-0 border-t border-gray-100 animate-slideDown">
                       <p className="text-sm text-gray-600 leading-relaxed mb-2">
                         {benefit.description}
                       </p>
-                      
+
                       {/* Feature List */}
                       <div className="space-y-1">
                         <div className="flex items-start gap-1 p-1 rounded bg-gray-50">
@@ -141,24 +137,21 @@ export default function WhyPartner({
                 <button
                   key={index}
                   onClick={() => setActiveTab(index)}
-                  className={`w-full text-left p-3 rounded-lg transition-all duration-300 ${
-                    activeTab === index
+                  className={`w-full text-left p-3 rounded-lg transition-all duration-300 ${activeTab === index
                       ? 'bg-white shadow-md border-l-4 border-[#FBB900]'
                       : 'bg-white/50 hover:bg-white hover:shadow-sm border-l-4 border-transparent'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all ${
-                      activeTab === index
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all ${activeTab === index
                         ? 'bg-[#FBB900] text-black'
                         : 'bg-gray-100 text-gray-600'
-                    }`}>
+                      }`}>
                       {benefit.icon}
                     </div>
                     <div className="flex-1">
-                      <h3 className={`text-xs font-medium transition-colors ${
-                        activeTab === index ? 'text-gray-900' : 'text-gray-600'
-                      }`}>
+                      <h3 className={`text-xs font-medium transition-colors ${activeTab === index ? 'text-gray-900' : 'text-gray-600'
+                        }`}>
                         {benefit.title}
                       </h3>
                     </div>

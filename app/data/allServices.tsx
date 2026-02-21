@@ -39,7 +39,7 @@ export interface Service {
   description: string;
   features: string[];
   category: 'cloud' | 'devops' | 'ai' | 'kubernetes';
-  
+
   // Optional: For service detail pages
   hero?: {
     title: string;
@@ -88,7 +88,7 @@ export const allServices: Service[] = [
       </svg>
     ),
     excerpt: 'Modernizing business applications have become a necessity for businesses to sustain themselves',
-    description: 'At ckempt, we understand this dire need of new-age businesses to have a strong support for their modernization and cloud migration needs. Our end-to-end cloud support services guide businesses through their migration journey by identifying and selecting the right cloud deployment platforms, along with testing and management, for optimized business outcomes.',
+    description: 'At Axiicore, we understand this dire need of new-age businesses to have a strong support for their modernization and cloud migration needs. Our end-to-end cloud support services guide businesses through their migration journey by identifying and selecting the right cloud deployment platforms, along with testing and management, for optimized business outcomes.',
     features: [
       'Process-oriented cloud migration journey, using the right architecture, to achieve sustainable, strategic business growth.',
       'Optimized Efficiency through agile, scalable cloud solutions to retain a competitive advantage over dynamic market conditions.',
@@ -458,7 +458,7 @@ export const allServices: Service[] = [
   },
 
   // ========== AI SERVICES ==========
-  
+
   {
     slug: 'rag-solutions',
     title: 'RAG Solutions',

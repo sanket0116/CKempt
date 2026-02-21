@@ -19,7 +19,7 @@ export default function CallbackForm({ isOpen, onClose }: CallbackFormProps) {
     const formData = new FormData(e.currentTarget);
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
-    
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -100,10 +100,10 @@ export default function CallbackForm({ isOpen, onClose }: CallbackFormProps) {
           >
             {/* Web3Forms Access Key */}
             <input type="hidden" name="access_key" value="86603918-025c-46fe-be57-b66a2d190e45" />
-            
+
             {/* Web3Forms Configuration */}
-            <input type="hidden" name="subject" value="New Callback Request from CKempt" />
-            <input type="hidden" name="from_name" value="CKempt Callback Form" />
+            <input type="hidden" name="subject" value="New Callback Request from Axiicore" />
+            <input type="hidden" name="from_name" value="Axiicore Callback Form" />
             <input type="hidden" name="redirect" value="false" />
 
             {/* Full Name */}
