@@ -11,7 +11,7 @@ interface StatsProps {
   backgroundColor?: string;
 }
 
-export default function Stats({ 
+export default function Stats({
   title = "Trusted by Businesses Worldwide",
   stats,
   backgroundColor = "bg-[#FBB900]"
@@ -19,7 +19,7 @@ export default function Stats({
   return (
     <section className={`py-16 px-4 sm:px-6 lg:px-8 ${backgroundColor} text-black`}>
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-light text-center mb-12">
           {title}
         </h2>
         <div className="grid md:grid-cols-3 gap-8 text-center">

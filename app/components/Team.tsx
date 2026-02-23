@@ -36,22 +36,22 @@ export default function Team() {
   ];
 
   return (
-    <section id="team" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="team" className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F8FAFC' }}>
       <div className="max-w-7xl mx-auto">
         {/* Header - Left Aligned */}
         <div className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-            THE TEAM
+          <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-2">
+            Meet Our Team
           </h2>
           <div className="w-24 h-1 bg-[#FBB900]"></div>
         </div>
 
         {/* Team Grid - Compact and elegant */}
-        <div className="flex flex-wrap justify-center gap-6 max-w-3xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
           {members.map((member, index) => (
             <div
               key={index}
-              className="w-full sm:w-[calc(50%-12px)] max-w-[340px]"
+              className="w-full sm:w-[calc(50%-12px)]"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >

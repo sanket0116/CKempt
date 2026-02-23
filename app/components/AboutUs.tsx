@@ -44,7 +44,7 @@ export default function AboutUs() {
 
             {/* Section heading */}
             <div className="mb-8">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-3 leading-snug whitespace-nowrap">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-gray-900 mb-3 leading-snug whitespace-nowrap">
                 Practical support for teams running real production systems.
               </h2>
               <div className="w-14 h-1 bg-[#FBB900] rounded-full" />
