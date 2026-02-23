@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Header from '@/app/components/Header';
 import ContactModal from '@/app/components/ContactModal';
 import Footer from '@/app/components/Footer';
+import ServiceDetail from '@/app/components/ServiceDetail';
 import ServiceTemplate from '@/app/components/ServiceTemplate';
 import {
   categorizedServices,

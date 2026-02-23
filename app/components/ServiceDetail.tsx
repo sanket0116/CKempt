@@ -1,168 +1,207 @@
 'use client';
 
-export default function ServiceDetail() {
+import { useState } from 'react';
+
+interface ServiceDetailProps {
+  hero: {
+    title: string;
+    description: string;
+    animationPath?: string;
+  };
+  features: {
+    title: string;
+    subtitle: string;
+    items: {
+      title: string;
+      description: string;
+      icon: React.ReactNode;
+    }[];
+  };
+  process: {
+    title: string;
+    subtitle: string;
+    steps: {
+      number: string;
+      title: string;
+      description: string;
+    }[];
+  };
+  caseStudies: {
+    title: string;
+    subtitle: string;
+    items: {
+      title: string;
+      client: string;
+      description: string;
+      results: string[];
+    }[];
+  };
+  faqs: {
+    title: string;
+    subtitle: string;
+    items: {
+      question: string;
+      answer: string;
+    }[];
+  };
+}
+
+export default function ServiceDetail({
+  hero,
+  features,
+  process,
+  caseStudies,
+  faqs
+}: ServiceDetailProps) {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#f3f4f7]">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Cloud & Kubernetes Solutions
-          </h2>
-          <div className="w-24 h-1 bg-[#FBB900] mx-auto mb-6"></div>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive services cover everything from initial cloud strategy to ongoing operations and optimization.
-          </p>
+    <div className="bg-white">
+      {/* Hero Section */}
+      <section className="relative py-20 overflow-hidden bg-[#f3f4f7]">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#FBB900] rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#FBB900] rounded-full blur-[120px]"></div>
         </div>
 
-        {/* Three Service Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Cloud & Kubernetes Operations */}
-          <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-            <div className="flex items-start gap-3 mb-6">
-              <div className="w-12 h-12 bg-[#FBB900] rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900">
-                Cloud & Kubernetes Operations
-              </h3>
-            </div>
-
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-[#FBB900] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">24/7 production monitoring & support</span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-[#FBB900] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">Multi-cluster Kubernetes management</span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-[#FBB900] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">Infrastructure optimization & cost reduction</span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-[#FBB900] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">Performance tuning & scalability</span>
-              </li>
-            </ul>
-
-            <a href="/services/category/cloud" className="inline-flex items-center gap-2 text-[#FBB900] font-semibold hover:text-[#e5a800] transition-colors">
-              Learn More
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-
-          {/* Cloud Architecture & Strategy */}
-          <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-            <div className="flex items-start gap-3 mb-6">
-              <div className="w-12 h-12 bg-[#FBB900] rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4z" />
-                  <path d="m2.125 8.567-1.86.992a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882l-1.86-.992-5.17 2.756a1.5 1.5 0 0 1-1.41 0l-5.17-2.756z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900">
-                Cloud Architecture & Strategy
-              </h3>
-            </div>
-
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-[#FBB900] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">Cloud-native application design</span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-[#FBB900] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">Infrastructure as Code (IaC)</span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-[#FBB900] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">Multi-cloud strategy & migration</span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-[#FBB900] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">Security & compliance frameworks</span>
-              </li>
-            </ul>
-
-            <a href="/services/category/cloud" className="inline-flex items-center gap-2 text-[#FBB900] font-semibold hover:text-[#e5a800] transition-colors">
-              Learn More
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-
-          {/* DevOps & Automation */}
-          <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-            <div className="flex items-start gap-3 mb-6">
-              <div className="w-12 h-12 bg-[#FBB900] rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900">
-                DevOps & Automation
-              </h3>
-            </div>
-
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-[#FBB900] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">CI/CD pipeline implementation</span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-[#FBB900] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">GitOps & automated deployments</span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-[#FBB900] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">Container orchestration</span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-[#FBB900] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">Microservices architecture</span>
-              </li>
-            </ul>
-
-            <a href="/services/category/devops" className="inline-flex items-center gap-2 text-[#FBB900] font-semibold hover:text-[#e5a800] transition-colors">
-              Learn More
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+              {hero.title}
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              {hero.description}
+            </p>
+            <div className="w-24 h-1.5 bg-[#FBB900] mx-auto rounded-full"></div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{features.title}</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">{features.subtitle}</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {features.items.map((item, index) => (
+              <div key={index} className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                <div className="w-14 h-14 bg-[#FBB900]/10 rounded-xl flex items-center justify-center text-[#FBB900] mb-6 group-hover:bg-[#FBB900] group-hover:text-white transition-colors duration-300">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20 bg-[#f3f4f7]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{process.title}</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">{process.subtitle}</p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {process.steps.map((step, index) => (
+              <div key={index} className="relative">
+                <div className="bg-white rounded-2xl p-8 h-full shadow-sm hover:shadow-md transition-shadow relative z-10">
+                  <div className="w-12 h-12 bg-[#FBB900] text-black font-bold rounded-full flex items-center justify-center mb-6 text-xl">
+                    {step.number}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+                </div>
+                {index < process.steps.length - 1 && (
+                  <div className="hidden md:block absolute top-1/2 left-[calc(100%-1rem)] w-16 border-t-2 border-dashed border-[#FBB900]/30 z-0"></div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{caseStudies.title}</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">{caseStudies.subtitle}</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {caseStudies.items.map((study, index) => (
+              <div key={index} className="bg-gray-50 border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all group">
+                <div className="p-8">
+                  <div className="inline-block px-3 py-1 bg-[#FBB900]/10 text-[#FBB900] text-xs font-bold rounded-full mb-4">
+                    {study.client}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#FBB900] transition-colors">
+                    {study.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+                    {study.description}
+                  </p>
+                  <ul className="space-y-3">
+                    {study.results.map((result, rIndex) => (
+                      <li key={rIndex} className="flex items-start gap-2 text-sm text-gray-700">
+                        <svg className="w-5 h-5 text-[#FBB900] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        {result}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-[#f3f4f7]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{faqs.title}</h2>
+            <p className="text-gray-600">{faqs.subtitle}</p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.items.map((faq, index) => (
+              <div key={index} className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+                <button
+                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                >
+                  <span className="font-bold text-gray-900">{faq.question}</span>
+                  <svg
+                    className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${openFaqIndex === index ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div
+                  className={`px-6 transition-all duration-300 ease-in-out ${openFaqIndex === index ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'
+                    } overflow-hidden`}
+                >
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
