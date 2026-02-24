@@ -143,27 +143,21 @@ export default function DevOpsServicesPage() {
             title: 'Platforms & Tools',
             tools: [
                 {
-                    name: 'Git',
                     icon: <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" className="w-full h-full object-contain" />
                 },
                 {
-                    name: 'GitHub',
                     icon: <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" className="w-full h-full object-contain" />
                 },
                 {
-                    name: 'Jenkins',
                     icon: <img src="https://cdn.simpleicons.org/jenkins/D24939" alt="Jenkins" className="w-full h-full object-contain" />
                 },
                 {
-                    name: 'Docker',
                     icon: <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" className="w-full h-full object-contain" />
                 },
                 {
-                    name: 'Terraform',
                     icon: <img src="https://cdn.simpleicons.org/terraform/7B42BC" alt="Terraform" className="w-full h-full object-contain" />
                 },
                 {
-                    name: 'Ansible',
                     icon: <img src="https://cdn.simpleicons.org/ansible/EE0000" alt="Ansible" className="w-full h-full object-contain" />
                 },
             ],

@@ -33,7 +33,7 @@ export default function Team({
       bio: "With 18+ years in IT and 7+ years in AWS, I specialize in architecting highly available, scalable cloud infrastructures. Passionate about automation and sharing knowledge through practical, hands-on training.",
       image: "/image/team/chetan Agarwal.png",
       linkedin: 'https://www.linkedin.com/in/chetan-agrawal-30107310/',
-      email: "chetan@ckempt.com"
+      email: "chetan@axiicore.com"
     },
     {
       name: "Ranjeet Murade",
@@ -41,7 +41,7 @@ export default function Team({
       bio: "I help organisations translate business challenges into modern, scalable cloud and AI solutions. With 19+ years across solution consulting, pre-sales, cloud architecture, and digital transformation.",
       image: "/image/team/ranjeet murade.jpg",
       linkedin: 'https://www.linkedin.com/in/ranjeet-murade-66707a104/',
-      email: "ranjeet@ckempt.com"
+      email: "ranjeet@axiicore.com"
     }
   ];
 

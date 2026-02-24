@@ -58,7 +58,7 @@ type TwoColumnSection = {
 type ToolsSection = {
     type: 'tools';
     title: string;
-    tools: { name: string; icon?: React.ReactNode }[];
+    tools: { name?: string; icon?: React.ReactNode }[];
 };
 
 type ProcessSection = {
@@ -373,7 +373,9 @@ export default function ServiceTemplate({
                                         <div className="w-8 h-8 flex items-center justify-center [&_img]:h-full [&_img]:w-auto [&_img]:object-contain [&_svg]:h-full [&_svg]:w-auto">
                                             {tool.icon}
                                         </div>
-                                        <span className="font-bold text-[#1e293b] text-sm tracking-tight">{tool.name}</span>
+                                        {tool.name && (
+                                            <span className="font-bold text-[#1e293b] text-sm tracking-tight">{tool.name}</span>
+                                        )}
                                     </div>
                                 ))}
                             </div>

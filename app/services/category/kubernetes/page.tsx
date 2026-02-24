@@ -95,27 +95,21 @@ export default function KubernetesServicesPage() {
             title: 'Platforms & Tools',
             tools: [
                 {
-                    name: 'EKS',
                     icon: <img src="https://icon.icepanel.io/AWS/svg/Containers/EKS-Cloud.svg" alt="EKS" />
                 },
                 {
-                    name: 'GKE',
                     icon: <img src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="GKE" />
                 },
                 {
-                    name: 'Terraform',
                     icon: <img src="https://cdn.simpleicons.org/terraform/7B42BC" alt="Terraform" />
                 },
                 {
-                    name: 'GitLab',
                     icon: <img src="https://cdn.simpleicons.org/gitlab/FC6D26" alt="GitLab" />
                 },
                 {
-                    name: 'Prometheus',
                     icon: <img src="https://cdn.simpleicons.org/prometheus/E6522C" alt="Prometheus" />
                 },
                 {
-                    name: 'Grafana',
                     icon: <img src="https://cdn.simpleicons.org/grafana/F46800" alt="Grafana" />
                 },
             ],

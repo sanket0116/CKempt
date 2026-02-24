@@ -1,16 +1,16 @@
 'use client';
 
 interface HeroProps {
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   primaryButtonText?: string;
   onPrimaryClick?: () => void;
   animationPath?: string;
 }
 
 export default function Hero({
-  title,
-  subtitle,
+  title = "Cloud Architecture That Transforms Businesses",
+  subtitle = "When infrastructure breaks, teams slow down. We help growing companies stabilize, simplify, and scale their cloud and Kubernetes platforms — without overengineering.",
 }: HeroProps) {
   return (
     <>

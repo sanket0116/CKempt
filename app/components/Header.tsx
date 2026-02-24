@@ -95,12 +95,19 @@ export default function Header({ onContactClick, categorizedServices }: HeaderPr
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-gray-900 z-50 shadow-lg">
+    <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-md z-50 border-b border-white/5 shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <img src="/image/logo2.png" alt="Axiicore Logo" className="h-10 w-auto object-contain" />
+          <Link href="/" className="flex items-center gap-2 md:gap-3 group">
+            <img
+              src="/image/logo2.png"
+              alt="Axiicore Logo"
+              className="h-9 md:h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+            />
+            <span className="text-xl md:text-2xl font-bold tracking-tight text-white transition-all duration-300 group-hover:text-[#FBB900]">
+              Axiicore
+            </span>
           </Link>
 
           {/* Desktop Menu */}
